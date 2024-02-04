@@ -37,7 +37,7 @@ export function Footer() {
         <div className="flex flex-wrap md:flex-nowrap w-16 md:w-32 mt-2 gap-2">
             <a href="https://www.whatsapp.com/">
           <img
-            className=" w-7 h-8 md:w-[40px] md:h-[40px]"
+            className="w-7 h-8 md:w-[40px] md:h-[40px]"
             src="./icons/WhatsAppLogo.svg"
             alt="WhatsApp"
           />

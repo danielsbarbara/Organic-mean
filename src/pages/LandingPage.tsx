@@ -8,7 +8,7 @@ export function LandingPage() {
     return (
         <div className="flex flex-col items-center w-full h-full">
             <div className="absolute">
-            {!showVideo && <PageTitle title="Orgainc Mean"/>}
+            {!showVideo && <PageTitle title="Organic Mean"/>}
             </div>
              {showVideo ? 
              <div className="h-screen w-full">
