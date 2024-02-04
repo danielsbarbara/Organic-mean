@@ -1,0 +1,64 @@
+import {useState } from "react"
+import { AnimatePresence, motion } from "framer-motion"
+const images = ["./Carousel-images/image1.jpg", "./Carousel-images/image4.jpg", "./Carousel-images/image3.jpg"]
+
+
+export function CarouselHomePage(){
+    const [index, setIndex] = useState(0)
+    const [direction, setDirection] = useState(0)
+    
+    const variants = {
+        initial: {
+            x: direction > 0 ? 200 : -200,
+            opacity: 0
+        },
+        animate: {
+            x: 0,
+            opacity: 1
+        },
+        exit: {
+              x: direction > 0 ? 200 : -200,
+              opacity: 0
+            }
+        }
+
+
+    function setNextImage(action: string){
+        if(action === 'next'){
+            setDirection(-1)
+            setIndex(prev => prev === images.length - 1 ? prev : prev + 1)
+            return
+        } else {
+                setDirection(1)
+                setIndex(prev => prev === 0 ? prev : prev - 1)
+                return
+            }
+        }
+        
+    return(
+        <>
+            <div className="flex justify-center">
+                    <button 
+                    onClick={() => setNextImage('prev')}
+                    className="absolute left-[0rem] bg-darkTransparent text-white w-10 h-10 rounded-full self-center"
+                    >◀️</button>
+                    {/* <AnimatePresence initial={false} custom={direction}> */}
+                        <motion.img
+                        variants={variants} 
+                        animate="animate" 
+                        initial="initial"
+                        exit="exit"
+                        src={images[index]} 
+                        className="max-h-[500px] max-w-[90%] rounded-3xl shadow-2xl"
+                        key={images[index]}
+                        custom={direction}
+                        />
+                    {/* </AnimatePresence> */}
+                    <button 
+                    onClick={() => setNextImage('next')}
+                    className="absolute right-[0rem] bg-darkTransparent text-white w-10 h-10 rounded-full self-center"
+                    >▶️</button>
+            </div>
+        </>
+    )
+}

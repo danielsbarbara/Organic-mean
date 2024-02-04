@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  @font-face {
+    font-family: 'cinzel';
+    src: url('./resources/fonts/cinzel.regular.ttf');
+  }
+  @font-face {
+    font-family: 'bitterBold';
+    src: url('./resources/fonts/Bitter-Bold.ttf');
+  }
+  @font-face {
+    font-family: 'bitterItalic';
+    src: url('./resources/fonts/Bitter-Italic.ttf');
+  }
+  @font-face {
+    font-family: 'bitterThin';
+    src: url('./resources/fonts/Bitter-Thin.ttf');
+  }
+  @font-face {
+    font-family: 'bitterThinItalic';
+    src: url('./resources/fonts/Bitter-ThinItalic.ttf');
+  }
+  @font-face {
+    font-family: 'bitterLight';
+    src: url('./resources/fonts/Bitter-Light.ttf');
+  }
+  @font-face {
+    font-family: 'bitterLightItalic';
+    src: url('./resources/fonts/Bitter-LightItalic.ttf');
+  }
+  @font-face {
+    font-family: 'bitterExtraLight';
+    src: url('./resources/fonts/Bitter-ExtraLight.ttf');
+  }
+  @font-face {
+    font-family: 'bitterExtraLightItalic';
+    src: url('./resources/fonts/Bitter-ExtraLightItalic.ttf');
+  }
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
