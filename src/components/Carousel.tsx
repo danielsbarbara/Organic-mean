@@ -37,7 +37,7 @@ export function CarouselHomePage(){
         
     return(
         <>
-            <div className="flex justify-center">
+            <div className="flex justify-center w-full h-full">
                     <button 
                     onClick={() => setNextImage('prev')}
                     className="absolute left-[0rem] bg-darkTransparent text-white w-10 h-10 rounded-full self-center"
@@ -49,7 +49,7 @@ export function CarouselHomePage(){
                         initial="initial"
                         exit="exit"
                         src={images[index]} 
-                        className="max-h-[500px] max-w-[90%] rounded-3xl shadow-2xl"
+                        className="h-[695px] w-full md:max-h-[600px] md:w-full shadow-2xl"
                         key={images[index]}
                         custom={direction}
                         />
