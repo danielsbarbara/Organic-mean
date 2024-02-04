@@ -25,7 +25,7 @@ export function DarkContainer({ pageAbout }: PageProps) {
     <>
       {pageAbout === "aboutme" ? (
         <div className="flex flex-col items-center ">
-          <div>
+          <div >
             <PageTitle title={toLocalTranslation("about_me_title")} />
           </div>
 
