@@ -1,6 +1,5 @@
 import { CollectionBar } from "../components/CollectionBar";
 import { HomePageCards } from "../components/HomePageCards";
-import { NavBar } from "../components/NavBar";
 
 //Esta pagina tem o link organicmean.com/products
 

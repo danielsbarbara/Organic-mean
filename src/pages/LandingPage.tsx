@@ -7,7 +7,7 @@ export function LandingPage() {
     setTimeout(()=> setShowVideo(false), 10500)
     return (
         <div className="flex flex-col items-center mb-auto md:mb-10">
-            <PageTitle title="Joalharia de autor"/>
+            <PageTitle title="Teste"/>
              {showVideo ? 
              <video src="/video/OrganicMean.mp4" autoPlay muted/>
              :
