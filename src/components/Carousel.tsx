@@ -40,8 +40,8 @@ export function CarouselHomePage(){
             <div className="flex justify-center w-full h-full">
                     <button 
                     onClick={() => setNextImage('prev')}
-                    className="absolute left-[0rem] bg-darkTransparent text-white w-10 h-10 rounded-full self-center"
-                    >◀️</button>
+                    className="absolute left-[1rem] text-white self-center"
+                    ><div className="border-t-[2px] border-l-[2px] h-5 w-5 -rotate-45"/></button>
                     {/* <AnimatePresence initial={false} custom={direction}> */}
                         <motion.img
                         variants={variants} 
@@ -56,8 +56,8 @@ export function CarouselHomePage(){
                     {/* </AnimatePresence> */}
                     <button 
                     onClick={() => setNextImage('next')}
-                    className="absolute right-[0rem] bg-darkTransparent text-white w-10 h-10 rounded-full self-center"
-                    >▶️</button>
+                    className="absolute right-[1rem] text-white rounded-full self-center"
+                    ><div className="border-t-[2px] border-l-[2px] h-5 w-5 rotate-[135deg]"/></button>
             </div>
         </>
     )
