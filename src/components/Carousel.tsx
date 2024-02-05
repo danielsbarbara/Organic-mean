@@ -49,7 +49,7 @@ export function CarouselHomePage(){
                         initial="initial"
                         exit="exit"
                         src={images[index]} 
-                        className="h-[500px] w-full md:max-h-[600px] md:w-full shadow-2xl"
+                        className="h-[500px] w-full md:h-[600px] md:w-full shadow-2xl"
                         key={images[index]}
                         custom={direction}
                         />
