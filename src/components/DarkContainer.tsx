@@ -65,14 +65,15 @@ export function DarkContainer({ pageAbout }: PageProps) {
             <div className="w-60 m-auto mt-5 mb-5">
               <img src="/icons/ContactBookLogo.svg" />
             </div>
-            <div className="flex flex-col items-center p-3 md:justify-center">
+            <div className="flex flex-col items-center gap-4 p-3 md:justify-center">
+              <div></div>
               <Paragraph text="organicmean@gmail.com" />
               <Paragraph text="(+351) 935-658-854" />
             </div>
             <div className="flex justify-between p-1 md:flex-col md:p-3">
+              <SocialMediaIcon link="/icons/InstagramLogo.svg" />
               <SocialMediaIcon link="/icons/EmailLogo.svg" />
               <SocialMediaIcon link="/icons/WhatsAppLogo.svg" />
-              <SocialMediaIcon link="/icons/InstagramLogo.svg" />
               <SocialMediaIcon link="/icons/EtsyLogo.svg" />
             </div>
           </div>
