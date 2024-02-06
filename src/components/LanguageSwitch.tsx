@@ -27,10 +27,10 @@ window.location.reload()
   return (  
     <div className="flex items-center space-x-4">
 
-      <button onClick={() => changeLanguage()} className="text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-normal rounded-full text-xs px-3 b py-2.5 text-center items-center dark:focus:[#24292F] dark:hover:bg-[#050708]/30 cursor-pointer">
+      <button onClick={() => changeLanguage()} className="text-white bg-[#050708] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-normal rounded-full text-[0.70rem] px-2 b py-1.5 text-center items-center dark:focus:[#24292F] dark:hover:bg-[#050708]/30 cursor-pointer">
         {isPortuguese ? 'EN' : 'PT'}
       </button>
-
+    
     </div>
     )
 }
