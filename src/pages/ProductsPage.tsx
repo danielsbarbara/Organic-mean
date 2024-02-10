@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { CollectionBar } from "../components/CollectionBar";
 import { HomePageCards } from "../components/HomePageCards";
 
@@ -19,11 +20,11 @@ export function ProductsPage() {
     return (
         <div>
 
-        <div className="mb-20">
-               <CollectionBar />
-        </div>
+            <div className="mb-20">
+                <CollectionBar />
+            </div>
 
- <HomePageCards/>
+                <HomePageCards />
         </div>
     )
 }
