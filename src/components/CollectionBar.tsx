@@ -23,7 +23,7 @@ export const CollectionBar: React.FC = () => {
 
   return (
     <div className="relative bg-black/80 flex flex-col w-full">
-      <div className="w-full flex font-cinzel justify-center md:justify-start items-center md:gap-6">
+      <div className="flex font-cinzel items-center md:justify-start md:gap-6">
         <div>
           <CollectionItem
             description=""
@@ -35,8 +35,9 @@ export const CollectionBar: React.FC = () => {
           <div key={i}>{el}</div>
         ))}
       </div>
-
-      {showFilterOptions && <DropFilter />}
+      <div>
+        {showFilterOptions && <DropFilter />}
+      </div>
     </div>
   );
 };

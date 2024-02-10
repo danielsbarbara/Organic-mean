@@ -14,19 +14,19 @@ export function DropFilter() {
       </div>
 
       <div className="flex gap-4 md:gap-7">
-        <div className="flex flex-col-reverse justify-end gap-2 md:flex-row-reverse md:items-center">
+        <div className="flex flex-col-reverse justify-end items-center gap-2 md:flex-row-reverse">
           <input type="checkbox" />
           <DropFilterItem description={toLocalTranslation("drop_filter_item_1")} />
         </div>
-        <div className="flex flex-col-reverse justify-end gap-2 md:flex-row-reverse md:items-center">
+        <div className="flex flex-col-reverse justify-end gap-2 md:flex-row-reverse items-center">
           <input type="checkbox" />
           <DropFilterItem description={toLocalTranslation("drop_filter_item_2")} />
         </div>
-        <div className="flex flex-col-reverse justify-end gap-2 md:flex-row-reverse md:items-center">
+        <div className="flex flex-col-reverse justify-end gap-2 md:flex-row-reverse items-center">
           <input type="checkbox" />
           <DropFilterItem description={toLocalTranslation("drop_filter_item_3")} />
         </div>
-        <div className="flex flex-col-reverse justify-end gap-2 md:flex-row-reverse md:items-center">
+        <div className="flex flex-col-reverse justify-end gap-2 md:flex-row-reverse items-center">
           <input type="checkbox" />
           <DropFilterItem description={toLocalTranslation("drop_filter_item_4")} />
         </div>
