@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ImageCards } from "./ImageCards";
 import { CardPopup } from "./CardPopup";
 
@@ -10,12 +10,29 @@ interface hoverType {
 export function HomePageCards() {
   const [showPopup, setShowPopup] = useState<Boolean>(false);
   const [productPopup, setProductPopup] = useState<object>({});
-  const [hoveredCardIndex, setHoveredCardIndex] = useState<hoverType>({hover: false, index: -1});
+  const [hoveredCardIndex, setHoveredCardIndex] = useState<hoverType>({ hover: false, index: -1 });
+
+  useEffect(() => {
+    async function fetchData() {
+      const option = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ category: 'All', collection: [] })
+      }
+
+      const res = await fetch('/api/v1/products', option)
+      if (res.status === 200) {
+        const body = await res.json()
+        console.log(body.result)
+      }
+    }
+    fetchData()
+  }, [])
 
   const handleCardHover = (index: number) => {
-    setHoveredCardIndex((prev: hoverType) => ({...prev, index: index}))
-    setHoveredCardIndex((prev: hoverType) => ({...prev, hover: true}))
-};
+    setHoveredCardIndex((prev: hoverType) => ({ ...prev, index: index }))
+    setHoveredCardIndex((prev: hoverType) => ({ ...prev, hover: true }))
+  };
 
   function handleClick(product: any) {
     setShowPopup(true);
@@ -88,7 +105,7 @@ export function HomePageCards() {
       value={8}
     />
   ];
-  
+
   return (
     <div
       className={`p-2 flex justify-center flex-wrap gap-6 mb-20`}
@@ -100,7 +117,7 @@ export function HomePageCards() {
           onClick={() => handleClick(el)}
           key={i}
           onMouseOver={() => handleCardHover(i)}
-          onMouseLeave={() => setHoveredCardIndex((prev: hoverType) => ({...prev, hover: false}))}
+          onMouseLeave={() => setHoveredCardIndex((prev: hoverType) => ({ ...prev, hover: false }))}
         >
           {el}
         </div>

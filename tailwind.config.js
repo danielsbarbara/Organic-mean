@@ -5,10 +5,19 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-         'rustBackGround': "url(../public/images/background4.jpg)",
+        'rustBackGround': "url(../public/images/background4.jpg)",
       }, colors: {
         'card_popup_gray': '#83644C',
         'darkTransparent': 'rgba(0, 0, 0, 0.72)',
+      },
+      keyframes: {
+        opacityAnime: {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 100 }
+        }
+      },
+      animation: {
+        opacityA: 'opacityAnime 300ms ease-in-out'
       }
     },
     fontFamily: {
@@ -23,7 +32,7 @@ module.exports = {
       bitterRegular: ["bitterExtraLight"],
       bitterRegular: ["bitterExtraLightItalic"],
     },
-  
+
   },
   plugins: [],
 };
