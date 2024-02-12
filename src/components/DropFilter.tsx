@@ -13,7 +13,7 @@ export function DropFilter() {
         <DropFilterText description={toLocalTranslation("drop_filter_title")} />
       </div>
 
-      <div className="flex gap-2 md:gap-7">
+      <div className="flex gap-2 md:gap-7 w-full ml-2">
         <div className="flex flex-col-reverse justify-end items-center gap-2 md:flex-row-reverse">
           <input type="checkbox" />
           <DropFilterItem description={toLocalTranslation("drop_filter_item_1")} />
