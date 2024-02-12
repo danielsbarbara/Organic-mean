@@ -7,7 +7,21 @@ import { ScrollLine } from "./ScrollLine";
 import { SubtitleCards } from "./SubtitleCards";
 import { CardPopUpText } from "./CardPopUpText";
 
-export function CardPopup() {
+interface productInfo{
+  productPopup: productType | any
+}
+
+interface productType {
+  productName: string | undefined;
+  productNameEng: string | undefined;
+  category: string | undefined;
+  collection: string | undefined;
+  descriptionPt: string | undefined;
+  descriptionEng: string | undefined;
+  imgUrl: string | undefined;
+}
+
+export function CardPopup({productPopup}: productInfo) {
   return (
     <>
       <div
@@ -40,7 +54,7 @@ export function CardPopup() {
           {/* Div da imagem principal e das imagens pequenas */}
           <div className="mt-4 flex flex-col items-center gap-3 p-2">
             <div className="w-64 shadow-lg shadow-black md:w-[90%] md:h-[20rem]">
-              <ImageCardPopup />
+              <ImageCardPopup Url={productPopup.imgUrl}/>
             </div>
             <div className="mt-3 w-60 md:w-4/5 md:h-24">
               <ImageCardPopupSmall />
@@ -51,15 +65,14 @@ export function CardPopup() {
           <div className="mt-3 flex flex-col items-center md:flex-row md:justify-around">
             <div className="flex flex-col items-center">
             <SubtitleCards subtitle="Name" />
-            <Paragraph text="text" />
+            <Paragraph text={productPopup.productName} />
             </div>
             <div className="flex flex-col items-center">
             <SubtitleCards subtitle="Description" />
-            <Paragraph text="text" />
+            <Paragraph text={productPopup.descriptionPt}/>
             </div>
             <div className="flex flex-col items-center">
-            <SubtitleCards subtitle="Maintance Care" />
-            <Paragraph text="text" />
+          
             </div>
           </div>
         </div>

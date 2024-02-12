@@ -31,3 +31,5 @@ export function toLocalTranslation(textKey: string): string {
       return '';
     }
   }
+
+  // PT - descripton ENG - descriptionEng
