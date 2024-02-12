@@ -29,7 +29,7 @@ export function ProductsPage() {
             body: JSON.stringify({ category: 'All', collection: [] })
           }
     
-          const res = await fetch('/api/v1/products', option)
+          const res = await fetch('https://organic-mean.onrender.com/api/v1/products', option)
           if (res.status === 200) {
             const body = await res.json()
             setInfo(body.result)
