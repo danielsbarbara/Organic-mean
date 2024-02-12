@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { CollectionBar } from "../components/CollectionBar";
 import { HomePageCards } from "../components/HomePageCards";
 
@@ -17,6 +17,27 @@ import { HomePageCards } from "../components/HomePageCards";
 //      - o fetch product tem que transformar a informação que tem num pedido válido à API da webhopper
 
 export function ProductsPage() {
+
+
+    const [info, setInfo] = useState()
+
+    useEffect(() => {
+        async function fetchData() {
+          const option = {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ category: 'All', collection: [] })
+          }
+    
+          const res = await fetch('/api/v1/products', option)
+          if (res.status === 200) {
+            const body = await res.json()
+            setInfo(body.result)
+          }
+        }
+        fetchData()
+      }, [])
+
     return (
         <div>
 
@@ -24,7 +45,7 @@ export function ProductsPage() {
                 <CollectionBar />
             </div>
 
-                <HomePageCards />
+                <HomePageCards info={info}/>
         </div>
     )
 }
