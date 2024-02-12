@@ -18,12 +18,12 @@ export const CollectionBar: React.FC = () => {
       description={toLocalTranslation("collection_bar_enigma_item")}
       iconPath="./icons/EnigmaticLogo.svg"
     />,
-    <div className="w-14"></div>,
+    //<div className="w-14"></div>,
   ];
 
   return (
     <div className="relative bg-black/80 flex flex-col w-full">
-      <div className="flex font-cinzel items-center md:justify-start md:gap-6">
+      <div className="flex justify-between font-cinzel items-center md:justify-start md:gap-6">
         <div>
           <CollectionItem
             description=""
