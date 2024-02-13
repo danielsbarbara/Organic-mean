@@ -7,8 +7,8 @@ import { ScrollLine } from "./ScrollLine";
 import { SubtitleCards } from "./SubtitleCards";
 import { CardPopUpText } from "./CardPopUpText";
 
-interface productInfo{
-  productPopup: productType | any
+interface productInfo {
+  productPopup: productType | any;
 }
 
 interface productType {
@@ -21,7 +21,20 @@ interface productType {
   imgUrl: string | undefined;
 }
 
-export function CardPopup({productPopup}: productInfo) {
+export function CardPopup({ productPopup }: productInfo) {
+  const collectionIcons: Record<string, string> = {
+    Nature: "/icons/NatureCardLogo.svg",
+    Oceanic: "/icons/OceanicCardLogo.svg",
+    Geometric: "/icons/GeometricCardLogo.svg",
+    Enigma: "/icons/EnigmaticCardLogo.svg",
+  };
+
+  const collectionIcon =
+    productPopup && productPopup.collection
+      ? collectionIcons[productPopup.collection] || ""
+      : "";
+  // para nao ser undefined
+
   return (
     <>
       <div
@@ -43,37 +56,35 @@ export function CardPopup({productPopup}: productInfo) {
         z-50
         "
       >
-        <div className="w-full h-full">
+        <div className="w-auto h-auto">
           {/* div das engrenagens titulo e o icon da class */}
           <div className="h-28 flex items-center justify-center">
             <ClockImage link="/images/ClockImage.svg" />
             <CardPopUpText description="Ivy Leaf" />
-            <ClassIconPopUp link="/icons/Geometric_mobile.png" />
+            <ClassIconPopUp link={collectionIcon} />
           </div>
 
           {/* Div da imagem principal e das imagens pequenas */}
           <div className="mt-4 flex flex-col items-center gap-3 p-2">
-            <div className="w-64 shadow-lg shadow-black md:w-[90%] md:h-[20rem]">
-              <ImageCardPopup Url={productPopup.imgUrl}/>
+            <div className="w-64 shadow-lg shadow-black md:w-[60%] md:h-[18rem]">
+              <ImageCardPopup Url={productPopup.imgUrl} />
             </div>
-            <div className="mt-3 w-60 md:w-4/5 md:h-24">
+            <div className="mt-6 w-60 md:w-4/5 md:h-24">
               <ImageCardPopupSmall />
             </div>
           </div>
 
           {/* Div das descrições */}
-          <div className="mt-3 flex flex-col items-center md:flex-row md:justify-around">
+          <div className="m-4 md:m-10 items-center md:flex-row md:justify-around">
             <div className="flex flex-col items-center">
-            <SubtitleCards subtitle="Name" />
-            <Paragraph text={productPopup.productName} />
+              <SubtitleCards subtitle="Name" />
+              <Paragraph text={productPopup.productName} />
             </div>
             <div className="flex flex-col items-center">
-            <SubtitleCards subtitle="Description" />
-            <Paragraph text={productPopup.descriptionPt}/>
+              <SubtitleCards subtitle="Description" />
+              <Paragraph text={productPopup.descriptionPt} />
             </div>
-            <div className="flex flex-col items-center">
-          
-            </div>
+            <div className="flex flex-col items-center"></div>
           </div>
         </div>
         <div className="h-[30rem] w-5">
