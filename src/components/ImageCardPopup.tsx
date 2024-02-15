@@ -4,8 +4,6 @@ interface productInfo {
 }
 
 export function ImageCardPopup({Url}:productInfo){
-    
-console.log(Url)
 
     return(
         <>

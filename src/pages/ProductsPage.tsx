@@ -23,29 +23,28 @@ export function ProductsPage() {
 
     useEffect(() => {
         async function fetchData() {
-          const option = {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ category: 'All', collection: [] })
-          }
-    
-          const res = await fetch('/api/v1/products', option)
-          if (res.status === 200) {
-            const body = await res.json()
-            setInfo(body.result)
-          }
+            const option = {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ category: 'All', collection: [] })
+            }
+
+            const res = await fetch('https://organic-mean.onrender.com/api/v1/products', option)
+            if (res.status === 200) {
+                const body = await res.json()
+                setInfo(body.result)
+            }
         }
         fetchData()
-      }, [])
-
+    }, [])
+    console.log(info)
     return (
         <div>
 
             <div className="mb-20">
                 <CollectionBar />
             </div>
-
-                <HomePageCards info={info}/>
+                <HomePageCards info={info} />
         </div>
     )
 }

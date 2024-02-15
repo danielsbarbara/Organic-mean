@@ -1,16 +1,14 @@
-interface DropFilterItemProps{
+interface DropFilterItemProps {
     description: string
 }
 
-export function DropFilterItem({description}: DropFilterItemProps){
+export function DropFilterItem({ description }: DropFilterItemProps) {
 
 
-    return(
+    return (
         <>
             <div>
-    
-                <p className="flex gap-2 text-xs md:text-base text-black font-cinzel">{description}</p>
-        
+                <p className="flex gap-2 text-[0.7rem] md:text-base text-black font-cinzel">{description}</p>
             </div>
         </>
     )
