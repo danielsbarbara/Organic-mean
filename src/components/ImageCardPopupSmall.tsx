@@ -3,7 +3,7 @@ export function ImageCardPopupSmall(){
         <img src=".\Carousel-images\image9.jpg"/>,
         <img src=".\Carousel-images\image8.jpg"/>,
         <img src=".\Carousel-images\image7.jpg"/>,
-        <img src=".\Carousel-images\image6.jpg"/>,
+        <img src=".\Carousel-images\tabela-tamanhos.jpg"/>,
     ]
     return(
         <div className="flex gap-4 w-full justify-center">
