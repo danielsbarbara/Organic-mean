@@ -9,7 +9,7 @@ export function DropFilterItem({description}: DropFilterItemProps){
         <>
             <div>
     
-                <p className="flex gap-2 text-xs md:text-md text-black font-cinzel">{description}</p>
+                <p className="flex gap-2 text-xs md:text-base text-black font-cinzel">{description}</p>
         
             </div>
         </>

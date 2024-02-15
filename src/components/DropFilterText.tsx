@@ -8,7 +8,7 @@ export function DropFilterText({description}: DropFilterTextProps){
     return(
         <>
             <div>
-                <p className="` m-5 text-xs text-black font-cinzel text-center md:text-sm`">{description}</p>
+                <p className="` m-5 text-xs text-black font-cinzel text-center md:text-base `">{description}</p>
             </div>
         </>
     )
