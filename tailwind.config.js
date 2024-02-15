@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'rustBackGround': "url(../public/images/background4.jpg)",
+        'rustBackGround': "url(../public/images/background2.jpg)",
       }, colors: {
         'card_popup_gray': '#83644C',
         'darkTransparent': 'rgba(0, 0, 0, 0.72)',
