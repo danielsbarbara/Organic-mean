@@ -20,7 +20,7 @@ export function NavBar() {
           <div className="mb-2 self-end mr-2">
             <LanguageSwitch />
           </div>
-          <div className="flex gap-2 self-end justify-self-end p-3 md:self-center">
+          <div className="flex gap-2 self-end justify-self-end p-2 md:self-center">
             <Link to={"/aboutme"}>
               <NavItem description={toLocalTranslation("nav_bar_title_1")} />
             </Link>

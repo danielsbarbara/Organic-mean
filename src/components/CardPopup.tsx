@@ -6,6 +6,8 @@ import { Paragraph } from "./Paragraph";
 import { ScrollLine } from "./ScrollLine";
 import { SubtitleCards } from "./SubtitleCards";
 import { CardPopUpText } from "./CardPopUpText";
+import getUserLanguage from "../i18n/getLanguage";
+import { toLocalTranslation } from "../i18n/toLocalTranslation";
 
 interface productInfo {
   productPopup: productType | any;
@@ -26,19 +28,18 @@ export function CardPopup({ productPopup }: productInfo) {
     Nature: "/icons/NatureCardLogo.svg",
     Oceanic: "/icons/OceanicCardLogo.svg",
     Geometric: "/icons/GeometricCardLogo.svg",
-    Enigma: "/icons/EnigmaticCardLogo.svg",
+    Enigmatic: "/icons/EnigmaticCardLogo.svg",
   };
 
   const collectionIcon =
-    productPopup && productPopup.collection
-      ? collectionIcons[productPopup.collection] || ""
+    productPopup && productPopup.category
+      ? collectionIcons[productPopup.category] || ""
       : "";
   // para nao ser undefined
-
   return (
     <>
       <div
-        className="
+        className={`
         flex 
         items-center 
         bg-gradient-to-b
@@ -54,35 +55,35 @@ export function CardPopup({ productPopup }: productInfo) {
         md:h-[750px]
         md:-translate-y-20
         z-50
-        "
+        `}
       >
-        <div className="w-auto h-auto">
+        <div className="w-auto h-[640px]">
           {/* div das engrenagens titulo e o icon da class */}
           <div className="h-28 flex items-center justify-center">
             <ClockImage link="/images/ClockImage.svg" />
-            <CardPopUpText description="Ivy Leaf" />
+            <CardPopUpText description={getUserLanguage() === 'pt' ? productPopup.productName : productPopup.productNameEng} />
             <ClassIconPopUp link={collectionIcon} />
           </div>
 
           {/* Div da imagem principal e das imagens pequenas */}
-          <div className="mt-4 flex flex-col items-center gap-3 p-2">
+          <div className="flex flex-col items-center gap-3 p-2">
             <div className="w-64 shadow-lg shadow-black md:w-[60%] md:h-[18rem]">
               <ImageCardPopup Url={productPopup.imgUrl} />
             </div>
-            <div className="mt-6 w-60 md:w-4/5 md:h-24">
+            <div className="mt-2 w-60 md:w-4/5 md:h-24">
               <ImageCardPopupSmall />
             </div>
           </div>
 
           {/* Div das descrições */}
-          <div className="m-4 md:m-10 items-center md:flex-row md:justify-around">
+          <div className="mt-3 ml-2 mr-2 text-[0.8rem] text-center md:m-10 items-center md:flex-row md:justify-around">
             <div className="flex flex-col items-center">
-              <SubtitleCards subtitle="Name" />
-              <Paragraph text={productPopup.productName} />
+              <SubtitleCards subtitle={toLocalTranslation("popup_card_product_name")} />
+              <Paragraph text={getUserLanguage() === 'pt' ? productPopup.productName : productPopup.productNameEng} />
             </div>
-            <div className="flex flex-col items-center">
-              <SubtitleCards subtitle="Description" />
-              <Paragraph text={productPopup.descriptionPt} />
+            <div className="flex flex-col items-center mt-2">
+              <SubtitleCards subtitle={toLocalTranslation("popup_card_product_description")} />
+              <Paragraph text={getUserLanguage() === 'pt' ? productPopup.descriptionPt : productPopup.descriptionEng} />
             </div>
             <div className="flex flex-col items-center"></div>
           </div>
