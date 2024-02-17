@@ -41,7 +41,8 @@ export function CardPopup({ productPopup }: productInfo) {
       <div
         className={`
         flex 
-        items-center 
+        items-center
+        md:items-start 
         bg-gradient-to-b
         from-black
         via-card_popup_gray
@@ -57,16 +58,16 @@ export function CardPopup({ productPopup }: productInfo) {
         z-50
         `}
       >
-        <div className="w-auto h-[640px]">
+        <div className="w-auto h-[640px] flex-wrap flex-col">
           {/* div das engrenagens titulo e o icon da class */}
-          <div className="h-28 flex items-center justify-center">
+          <div className="h-28 flex items-center self-start justify-center">
             <ClockImage link="/images/ClockImage.svg" />
             <CardPopUpText description={getUserLanguage() === 'pt' ? productPopup.productName : productPopup.productNameEng} />
             <ClassIconPopUp link={collectionIcon} />
           </div>
 
           {/* Div da imagem principal e das imagens pequenas */}
-          <div className="flex flex-col items-center gap-3 p-2">
+          <div className="flex flex-col items-center gap-3 p-2 md:mt-4">
             <div className="w-64 shadow-lg shadow-black md:w-[60%] md:h-[18rem]">
               <ImageCardPopup Url={productPopup.imgUrl} />
             </div>
@@ -81,14 +82,14 @@ export function CardPopup({ productPopup }: productInfo) {
               <SubtitleCards subtitle={toLocalTranslation("popup_card_product_name")} />
               <Paragraph text={getUserLanguage() === 'pt' ? productPopup.productName : productPopup.productNameEng} />
             </div>
-            <div className="flex flex-col items-center mt-2">
+            <div className="flex flex-col items-center mt-2 md:max-w-[600px]">
               <SubtitleCards subtitle={toLocalTranslation("popup_card_product_description")} />
               <Paragraph text={getUserLanguage() === 'pt' ? productPopup.descriptionPt : productPopup.descriptionEng} />
             </div>
             <div className="flex flex-col items-center"></div>
           </div>
         </div>
-        <div className="h-[30rem] w-5">
+        <div className="h-[30rem] w-5 self-center">
           <ScrollLine />
         </div>
       </div>
