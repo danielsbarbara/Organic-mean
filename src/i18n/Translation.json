@@ -115,8 +115,13 @@
   "pato": {
     "pt": "fgfgfg",
     "en": "ghghffh"
+  },
+  "popup_card_product_name": {
+    "pt": "Nome",
+    "en": "Name"
+  },
+  "popup_card_product_description": {
+    "pt": "Descrição",
+    "en": "Description"
   }
-
-
-
 }

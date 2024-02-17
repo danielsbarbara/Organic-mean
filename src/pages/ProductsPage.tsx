@@ -17,8 +17,6 @@ import { HomePageCards } from "../components/HomePageCards";
 //      - o fetch product tem que transformar a informação que tem num pedido válido à API da webhopper
 
 export function ProductsPage() {
-
-
     const [info, setInfo] = useState()
 
     useEffect(() => {
@@ -37,7 +35,7 @@ export function ProductsPage() {
         }
         fetchData()
     }, [])
-    console.log(info)
+
     return (
         <div>
 
