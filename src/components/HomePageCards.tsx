@@ -66,7 +66,7 @@ export function HomePageCards({ info }: product) {
         </div>
       ))}
 
-      <div className={`fixed -translate-y-[250px] z-50`}>
+      <div className={`fixed -translate-y-[250px] z-50 md:-translate-y-[11rem]`}>
         {showPopup && (
           <CardPopup productPopup={productPopup} />
         )}
