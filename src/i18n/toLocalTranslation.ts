@@ -12,14 +12,14 @@
 // const browserLanguage: string = toLocaleTranslation();
 // console.log('Browser Language:', browserLanguage)
 import t from "./Translation.json"
-
+import getUserLanguage from "./getLanguage"
 const translations = t as any
 
 export function toLocalTranslation(textKey: string): string {
     try {
   
-      const userLanguage = localStorage.getItem('userLanguage') || navigator.language;
-      const languagePrefix = userLanguage.startsWith('pt') ? 'pt' : 'en';
+      //const userLanguage = localStorage.getItem('userLanguage') || navigator.language;
+      const languagePrefix = getUserLanguage() //userLanguage.startsWith('pt') ? 'pt' : 'en';
   
       if (translations[textKey] && translations[textKey][languagePrefix]) {
         return translations[textKey][languagePrefix];

@@ -1,11 +1,11 @@
-interface ClassIconPopUpType{
+interface ClassIconPopUpType {
     link: string
 }
 
-export function ClassIconPopUp({link}: ClassIconPopUpType){
+export function ClassIconPopUp({ link }: ClassIconPopUpType) {
     return (
         <>
-            <img src={link} className="absolute translate-y-20"/>
+            <img src={link} className="w-10 opacity-50 absolute translate-y-16 md:translate-y-20" />
         </>
     )
 }

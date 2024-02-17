@@ -1,3 +1,4 @@
+import getUserLanguage from "../i18n/getLanguage";
 import { CardBoxTitle } from "./CardBoxTitle"
 
 interface hoverType {
@@ -7,9 +8,9 @@ interface hoverType {
 
 
 interface product {
-    info:IImageCardsProps | undefined
-    }
-    
+    info: IImageCardsProps | undefined
+}
+
 
 interface IImageCardsProps {
     productName: string | undefined;
@@ -23,7 +24,7 @@ interface IImageCardsProps {
 
 
 
-export function ImageCards({info}: product) {
+export function ImageCards({ info }: product) {
     return (
         <a href={"#"}>
             <div className=" border-t-[2px] border-l-[2px] border-white w-20 h-20 absolute" />
@@ -35,7 +36,7 @@ export function ImageCards({info}: product) {
             </div> */}
             <div className="border-b-[2px] border-r-[2px] border-white w-20 h-20 absolute translate-x-[3.8rem] -translate-y-[4.2rem] md:translate-x-[10.8rem] md:-translate-y-[4.2rem]" />
             <div className="flex justify-center items-center mt-1 mb-2 w-7 translate-y-4 md:w-52 md:translate-x-5 md:mt-2 md:mb-2">
-                <CardBoxTitle namePt={info?.productName} nameEng={info?.productNameEng}/>
+                <CardBoxTitle name={getUserLanguage() === 'pt' ? info?.productName : info?.productNameEng} />
             </div>
         </a>
     )
