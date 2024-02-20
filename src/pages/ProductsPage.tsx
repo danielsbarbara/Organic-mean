@@ -4,7 +4,6 @@ import { HomePageCards } from "../components/HomePageCards";
 
 //Esta pagina tem o link organicmean.com/products
 
-
 //Acho que quando abrimos um cartao (visto que nao trocamos de pagina)
 
 //Devia passar a ser algo como organicmean.com/products?product=${ID_DO_PRODUTO}
@@ -17,32 +16,38 @@ import { HomePageCards } from "../components/HomePageCards";
 //      - o fetch product tem que transformar a informação que tem num pedido válido à API da webhopper
 
 export function ProductsPage() {
-    const [info, setInfo] = useState()
+  const [info, setInfo] = useState();
+  const [filter, setFilter] = useState({ category: "All", collection: [] });
 
-    useEffect(() => {
-        async function fetchData() {
-            const option = {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ category: 'All', collection: [] })
-            }
 
-            const res = await fetch('https://organic-mean.onrender.com/api/v1/products', option)
-            if (res.status === 200) {
-                const body = await res.json()
-                setInfo(body.result)
-            }
-        }
-        fetchData()
-    }, [])
+  useEffect(() => {
+    async function fetchData() {
+      const option = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(filter),
+      };
 
-    return (
-        <div>
+      const res = await fetch(
+        "https://organic-mean.onrender.com/api/v1/products",
+        option
+      );
+      if (res.status === 200) {
+        const body = await res.json();
+        setInfo(body.result);
+      }
+    }
+    fetchData();
+  }, [filter]);
 
-            <div className="mb-20">
-                <CollectionBar />
-            </div>
-                <HomePageCards info={info} />
-        </div>
-    )
+console.log(filter)
+
+  return (
+    <div>
+      <div className="mb-20">
+        <CollectionBar setFilter={setFilter}/>
+      </div>
+      <HomePageCards info={info} />
+    </div>
+  );
 }

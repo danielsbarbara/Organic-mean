@@ -69,7 +69,7 @@
     "en": "Over the years, I've learned a lot and I'm deeply connected to the world of jewellery. However, when I decided to enter the sector, I knew for sure that I wanted to do things differently. With Organic Mean, I am building a form of jewellery that is different from the traditional archetypes of concept and design.”"
   },
   "collection_bar_all_item": {
-    "pt": "Todos",
+    "pt": "All",
     "en": "All"
   },
   "collection_bar_nature_item": {
@@ -85,8 +85,8 @@
     "en": "Geometric"
   },
   "collection_bar_enigma_item": {
-    "pt": "Enigma",
-    "en": "Enigma"
+    "pt": "Enigmatic",
+    "en": "Enigmatic"
   },
   "drop_filter_title": {
     "pt": "Filtros",
