@@ -42,9 +42,9 @@ export function HomePageCards({ info }: product) {
   }
 
   return (
-    <
-      // className={`p-2 flex justify-center flex-wrap gap-6 mb-20 z-10`}
-      >
+    <div className="flex justify-center"
+    // className={`p-2 flex justify-center flex-wrap gap-6 mb-20 z-10`}
+    >
       <div className={`p-2 flex justify-center flex-wrap gap-6 mb-20`}
         onClick={() => showPopup && setShowPopup(false)}>
         {info?.map((el, i) => (
@@ -65,12 +65,12 @@ export function HomePageCards({ info }: product) {
           </div>
         ))}
       </div>
-      <div className={`fixed top-[2%] left-[8%] md:top-[12%] md:left-[27%]`}>
+      <div className={`fixed z-50 -translate-y-[15rem] md:-translate-y-[11rem]`}>
         {showPopup && (
           <CardPopup productPopup={productPopup} />
         )}
       </div>
 
-    </>
+    </div>
   );
 }
