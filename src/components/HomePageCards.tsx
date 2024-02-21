@@ -41,36 +41,36 @@ export function HomePageCards({ info }: product) {
     setProductPopup(product);
   }
 
-  // console.log(window.scroll(0, 200), window.scrollY);
-  const position = window.scrollY
   return (
-    <div
-      className={`p-2 flex justify-center flex-wrap gap-6 mb-20`}
-      onClick={() => showPopup && setShowPopup(false)}
-    >
-      {info?.map((el, i) => (
-        <div
-          className={`${showPopup
-            ? "transition duration-500 opacity-30"
-            : "transition duration-500 opacity-100"
-            }`}
-          onClick={(event) => handleClick(el, event)}
-          key={i}
-          onMouseOver={() => handleCardHover(i)}
-          onMouseLeave={() => setHoveredCardIndex((prev: hoverType) => ({
-            ...prev, hover: false,
-          }))
-          }
-        >
-          <ImageCards info={el} />
-        </div>
-      ))}
-
-      <div className={`fixed -translate-y-[250px] z-50 md:-translate-y-[11rem]`}>
+    <
+      // className={`p-2 flex justify-center flex-wrap gap-6 mb-20 z-10`}
+      >
+      <div className={`p-2 flex justify-center flex-wrap gap-6 mb-20`}
+        onClick={() => showPopup && setShowPopup(false)}>
+        {info?.map((el, i) => (
+          <div
+            className={`${showPopup
+              ? "transition duration-500 opacity-30"
+              : "transition duration-500 opacity-100"
+              }`}
+            onClick={(event) => handleClick(el, event)}
+            key={i}
+            onMouseOver={() => handleCardHover(i)}
+            onMouseLeave={() => setHoveredCardIndex((prev: hoverType) => ({
+              ...prev, hover: false,
+            }))
+            }
+          >
+            <ImageCards info={el} />
+          </div>
+        ))}
+      </div>
+      <div className={`fixed top-[2%] left-[8%] md:top-[12%] md:left-[27%]`}>
         {showPopup && (
           <CardPopup productPopup={productPopup} />
         )}
       </div>
-    </div>
+
+    </>
   );
 }
