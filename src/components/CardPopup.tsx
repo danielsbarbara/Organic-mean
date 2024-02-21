@@ -52,7 +52,7 @@ export function CardPopup({ productPopup }: productInfo) {
         shadow-lg 
         shadow-black 
         rounded-lg
-        md:w-full
+        md:w-[600px]
         md:h-[750px]
         md:-translate-y-20
         z-50
