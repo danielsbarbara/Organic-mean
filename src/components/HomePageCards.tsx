@@ -12,18 +12,19 @@ interface product {
 }
 
 interface productType {
-  productName: string | undefined;
-  productNameEng: string | undefined;
-  category: string | undefined;
-  collection: string | undefined;
-  descriptionPt: string | undefined;
-  descriptionEng: string | undefined;
-  imgUrl: string | undefined;
+  productName: string
+  productNameEng: string
+  category: string
+  collection: string
+  descriptionPt: string
+  descriptionEng: string
+  imgUrl: string
+  smallImgs: Array<string>
 }
 
 export function HomePageCards({ info }: product) {
   const [showPopup, setShowPopup] = useState<Boolean>(false);
-  const [productPopup, setProductPopup] = useState<object>({});
+  const [productPopup, setProductPopup] = useState<productType | any>();
   const [hoveredCardIndex, setHoveredCardIndex] = useState<hoverType>({
     hover: false,
     index: -1,
@@ -67,7 +68,7 @@ export function HomePageCards({ info }: product) {
       </div>
       <div className={`fixed z-50 -translate-y-[15rem] md:-translate-y-[11rem]`}>
         {showPopup && (
-          <CardPopup productPopup={productPopup} />
+          <CardPopup productPopup={productPopup} setProductPopup={setProductPopup}/>
         )}
       </div>
 
