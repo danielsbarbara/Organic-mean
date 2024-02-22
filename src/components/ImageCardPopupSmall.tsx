@@ -1,4 +1,9 @@
-export function ImageCardPopupSmall() {
+interface imageType {
+    smallImg: Array<string>
+    imageSellection: Function
+}
+
+export function ImageCardPopupSmall({ smallImg, imageSellection }: imageType) {
     const imageArray = [
         <img src=".\Carousel-images\image9.jpg" />,
         <img src=".\Carousel-images\image8.jpg" />,
@@ -7,12 +12,14 @@ export function ImageCardPopupSmall() {
     ]
     return (
         <div className="flex gap-4 w-full justify-center">
-            {imageArray.map((el, i) =>
+            {smallImg.map((el, i) =>
                 <>
-                    <div key={i} className="w-16 md:w-32">
+                    <div key={i} className="w-16 md:w-32"
+                        onClick={() => imageSellection(el, i)}
+                    >
                         <div key={Math.random()} className="border-t-[1px] border-l-[1px] border-white w-4 h-4 absolute -translate-x-1 -translate-y-1 md:h-7 md:w-7"></div>
-                        {el}
-                        <div key={Math.random()} className="border-b-[1px] border-r-[1px] border-white w-4 h-4 absolute translate-x-9 -translate-y-3 md:translate-x-[4.8rem] md:-translate-y-6 md:w-7 md:h-7"></div>
+                        <img src={el} />
+                        <div key={Math.random()} className="border-b-[1px] border-r-[1px] border-white w-4 h-4 absolute translate-x-[3.2rem] -translate-y-3 md:translate-x-[6.5rem] md:-translate-y-6 md:w-7 md:h-7"></div>
                     </div>
                 </>
             )}

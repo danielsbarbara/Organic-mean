@@ -10,20 +10,26 @@ import getUserLanguage from "../i18n/getLanguage";
 import { toLocalTranslation } from "../i18n/toLocalTranslation";
 
 interface productInfo {
-  productPopup: productType | any;
+  productPopup: productType
+  setProductPopup: Function
+}
+
+interface setType {
+  setProductPopup: Function
 }
 
 interface productType {
-  productName: string | undefined;
-  productNameEng: string | undefined;
-  category: string | undefined;
-  collection: string | undefined;
-  descriptionPt: string | undefined;
-  descriptionEng: string | undefined;
-  imgUrl: string | undefined;
+  productName: string
+  productNameEng: string
+  category: string
+  collection: string
+  descriptionPt: string
+  descriptionEng: string
+  imgUrl: string
+  smallImgs: Array<string>
 }
 
-export function CardPopup({ productPopup }: productInfo) {
+export function CardPopup({ productPopup, setProductPopup }: productInfo) {
   const collectionIcons: Record<string, string> = {
     Nature: "/icons/NatureCardLogo.svg",
     Oceanic: "/icons/OceanicCardLogo.svg",
@@ -35,11 +41,16 @@ export function CardPopup({ productPopup }: productInfo) {
     productPopup && productPopup.category
       ? collectionIcons[productPopup.category] || ""
       : "";
+
+  function imageSellection(url: string, i: number) {
+    setProductPopup((prev: productType) => ({ ...prev, imgUrl: url, smallImgs: [prev.smallImgs[i] = prev.imgUrl] }))
+    //setProductPopup('ola')
+  }
   // para nao ser undefined
   return (
     <>
       <div
-        className={`
+        className="
         flex 
         items-center
         md:items-start 
@@ -53,12 +64,12 @@ export function CardPopup({ productPopup }: productInfo) {
         shadow-black 
         rounded-lg
         md:w-[600px]
-        md:h-[750px]
+        md:h-auto
         md:-translate-y-20
         z-50
-        `}
+        "
       >
-        <div className="w-auto h-[640px] flex-wrap flex-col">
+        <div className="w-auto h-auto flex-wrap flex-col">
           {/* div das engrenagens titulo e o icon da class */}
           <div className="h-28 flex items-center self-start justify-center">
             <ClockImage link="/images/ClockImage.svg" />
@@ -72,7 +83,7 @@ export function CardPopup({ productPopup }: productInfo) {
               <ImageCardPopup Url={productPopup.imgUrl} />
             </div>
             <div className="mt-2 w-60 md:w-4/5 md:h-24">
-              <ImageCardPopupSmall />
+              <ImageCardPopupSmall smallImg={productPopup.smallImgs} imageSellection={imageSellection} />
             </div>
           </div>
 
