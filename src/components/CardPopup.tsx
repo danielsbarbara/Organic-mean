@@ -82,18 +82,18 @@ export function CardPopup({ productPopup, setProductPopup }: productInfo) {
             <div className="w-64 shadow-lg shadow-black md:w-[60%] md:h-[18rem]">
               <ImageCardPopup Url={productPopup.imgUrl} />
             </div>
-            <div className="mt-2 w-60 md:w-4/5 md:h-24">
+            <div className="mt-1 w-60 md:w-[70px]">
               <ImageCardPopupSmall smallImg={productPopup.smallImgs} imageSellection={imageSellection} />
             </div>
           </div>
 
           {/* Div das descrições */}
-          <div className="mt-3 ml-2 mr-2 text-[0.8rem] text-center md:m-10 items-center md:flex-row md:justify-around">
-            <div className="flex flex-col items-center">
+          <div className="mt-2 ml-2 mr-2 text-[0.8rem] text-center md:m-3 items-center md:flex-row md:justify-around">
+            <div className="flex flex-col items-center md:min-w-[550px]">
               <SubtitleCards subtitle={toLocalTranslation("popup_card_product_name")} />
               <Paragraph text={getUserLanguage() === 'pt' ? productPopup.productName : productPopup.productNameEng} />
             </div>
-            <div className="flex flex-col items-center mt-2 md:max-w-[600px]">
+            <div className="flex flex-col items-center mt-1 md:max-w-[600px]">
               <SubtitleCards subtitle={toLocalTranslation("popup_card_product_description")} />
               <Paragraph text={getUserLanguage() === 'pt' ? productPopup.descriptionPt : productPopup.descriptionEng} />
             </div>
