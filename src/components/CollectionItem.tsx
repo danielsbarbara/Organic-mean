@@ -14,6 +14,7 @@ export const CollectionItem: React.FC<CollectionItemProp> = ({ description, icon
             onClick(); 
         }
         if (setFilter && description !== "") {
+            if (description === 'Todos') description = 'All'
             setFilter((prev: any) => ({...prev, category: description}));
         }
     }

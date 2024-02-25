@@ -29,13 +29,13 @@ export function DarkContainer({ pageAbout }: PageProps) {
             <PageTitle title={toLocalTranslation("about_me_title")} />
           </div>
 
-          <div className="bg-darkTransparent w-[20rem] md:w-[60rem] font-bitterThin max-w-2xl text-center ">
+          <div className="p-5 bg-darkTransparent w-[20rem] md:w-[60rem] font-bitterThin max-w-2xl text-center ">
             <Paragraph text={toLocalTranslation("about_me_paragraph_1")} />
             <Paragraph text={toLocalTranslation("about_me_paragraph_2")} />
             <Paragraph text={toLocalTranslation("about_me_paragraph_3")} />
           </div>
 
-          <div className="bg-darkTransparent w-[20rem] md:w-[60rem] font-bitterThinItalic max-w-2xl text-center">
+          <div className="p-5 bg-darkTransparent w-[20rem] md:w-[60rem] font-bitterThinItalic max-w-2xl text-center">
             <SubtitleCards
               subtitle={toLocalTranslation("from_the_autor_title")}
             />
@@ -48,7 +48,7 @@ export function DarkContainer({ pageAbout }: PageProps) {
 
             <div className="text-white font-cinzel text-xs text-center md:text-base relative w-full block after:block after:content-[''] after:absolute after:h-[1px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center ">
 
-              <div className="flex justify-center w-full">
+              <div className="flex justify-center w-full p-5">
                 <Link to={"/products"}>
                   <Paragraph text={toLocalTranslation("about_me_link")} />
                 </Link>
@@ -59,9 +59,9 @@ export function DarkContainer({ pageAbout }: PageProps) {
       ) : (
         <div className="flex flex-col items-center">
           <div>
-            <PageTitle title={toLocalTranslation("contact_page_title")}/>
+            <PageTitle title={toLocalTranslation("contact_page_title")} />
           </div>
-          <div className="bg-darkTransparent w-full md:flex md:flex-row-reverse">
+          <div className="p-5 mb-4 bg-darkTransparent w-full md:flex md:flex-row-reverse">
             <div className="w-60 m-auto mt-5 mb-5">
               <img src="/icons/ContactBookLogo.svg" />
             </div>

@@ -43,8 +43,7 @@ export function CardPopup({ productPopup, setProductPopup }: productInfo) {
       : "";
 
   function imageSellection(url: string, i: number) {
-    setProductPopup((prev: productType) => ({ ...prev, imgUrl: url, smallImgs: [prev.smallImgs[i] = prev.imgUrl] }))
-    //setProductPopup('ola')
+    setProductPopup((prev: productType) => ({ ...prev, imgUrl: url, smallImgs: prev.smallImgs.map((img: string, idx:number) => idx === i ? img = prev.imgUrl : img) }))
   }
   // para nao ser undefined
   return (
@@ -82,7 +81,7 @@ export function CardPopup({ productPopup, setProductPopup }: productInfo) {
             <div className="w-64 shadow-lg shadow-black md:w-[60%] md:h-[18rem]">
               <ImageCardPopup Url={productPopup.imgUrl} />
             </div>
-            <div className="mt-1 w-60 md:w-[70px]">
+            <div className="mt-1 w-full md:w-[28%]">
               <ImageCardPopupSmall smallImg={productPopup.smallImgs} imageSellection={imageSellection} />
             </div>
           </div>
