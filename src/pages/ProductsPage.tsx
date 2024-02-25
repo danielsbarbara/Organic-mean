@@ -40,14 +40,12 @@ export function ProductsPage() {
     fetchData();
   }, [filter]);
 
-console.log(filter)
-
   return (
     <div>
       <div className="mb-20">
-        <CollectionBar setFilter={setFilter}/>
+        <CollectionBar setFilter={setFilter} />
       </div>
-      <HomePageCards info={info} />
+        <HomePageCards info={info} />
     </div>
   );
 }
