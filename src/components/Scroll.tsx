@@ -26,11 +26,11 @@ export function ScrollBar({ target }: ScrollType) {
 
     return (
         <>
-            <div className='absolute right-2 top-[30%] flex flex-col items-center'>
-                <div className={`h-[20px] w-[2px] bg-white`} style={{ height: `${scroll}px` }} />
-                <div className="border-l-[2px] border-b-[2px] border-white h-4 w-4 -rotate-45 -translate-y-3" />
-                <div className="border-l-[2px] border-b-[2px] border-white h-4 w-4 -rotate-45 -translate-y-5" />
-                <div className="border-l-[2px] border-b-[2px] border-white h-4 w-4 -rotate-45 -translate-y-7" />
+            <div className='absolute right-2 top-[40%] flex flex-col items-center'>
+                <div className={`h-[20px] w-[2px] bg-white opacity-45`} style={{ height: `${scroll}px` }} />
+                <div className="border-l-[2px] border-b-[2px] border-white h-4 w-4 -rotate-45 -translate-y-3 opacity-45" />
+                <div className="border-l-[2px] border-b-[2px] border-white h-4 w-4 -rotate-45 -translate-y-5 opacity-60" />
+                <div className="border-l-[2px] border-b-[2px] border-white h-4 w-4 -rotate-45 -translate-y-7 opacity-80" />
             </div>
         </>
     )

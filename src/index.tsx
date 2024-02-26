@@ -17,7 +17,7 @@ import { Root } from './pages/Root';
 import { ProductsPage } from './pages/ProductsPage';
 import { ComponentsPage } from './pages/Components';
 import Aboutme from './pages/Aboutme';
-
+document.title = 'Organic Mean'
 //Creates the router for the website
 const router = createBrowserRouter([
   {
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
       },
       {
         path: "aboutme",
-        element: <Aboutme/>
+        element: <Aboutme />
       }
     ],
   },
