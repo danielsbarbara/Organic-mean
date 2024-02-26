@@ -1,10 +1,13 @@
+import { useRef } from "react";
 import { DarkContainer } from "../components/DarkContainer";
-import { PageTitle } from "../components/PageTitle";
+import { ScrollBar } from "../components/Scroll";
 
 export default function Aboutme() {
+    const mainRef = useRef<HTMLDivElement | null>(null)
     return (
-        <div className="mb-10">
+        <div className="mb-10" ref={mainRef}>
             <DarkContainer pageAbout="aboutme" />
+            <ScrollBar target={mainRef}/>
         </div>
     )
 }
