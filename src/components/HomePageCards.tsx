@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ImageCards } from "./ImageCards";
 import { CardPopup } from "./CardPopup";
+import { ScrollBar } from "./Scroll";
 
 interface hoverType {
   hover: boolean;
@@ -29,6 +30,7 @@ export function HomePageCards({ info }: product) {
     hover: false,
     index: -1,
   });
+  const mainRef = useRef<HTMLDivElement | null>(null)
   const [te, sette] = useState<number>()
 
   const handleCardHover = (index: number) => {
@@ -43,7 +45,7 @@ export function HomePageCards({ info }: product) {
   }
 
   return (
-    <div className="flex justify-center"
+    <div className="flex justify-center" ref={mainRef}
     // className={`p-2 flex justify-center flex-wrap gap-6 mb-20 z-10`}
     >
       <div className={`p-2 flex justify-center flex-wrap gap-6 mb-20`}
@@ -71,7 +73,7 @@ export function HomePageCards({ info }: product) {
           <CardPopup productPopup={productPopup} setProductPopup={setProductPopup}/>
       </div>
         )}
-
+        <ScrollBar target={mainRef}/>
     </div>
   );
 }
