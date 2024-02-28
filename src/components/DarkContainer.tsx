@@ -15,27 +15,55 @@ import { Paragraph } from "./Paragraph";
 import { SocialMediaIcon } from "./SocialMediaIcon";
 import { SubtitleCards } from "./SubtitleCards";
 import { toLocalTranslation } from "../i18n/toLocalTranslation";
+import { useEffect, useState } from "react";
+import { SpinWheel } from "./SpinWheel";
 
 interface PageProps {
   pageAbout: string;
 }
 
 export function DarkContainer({ pageAbout }: PageProps) {
+  const [spin, setSpin] = useState<number>(0)
+
+  function spinListener() {
+    const spinWheel = window.scrollY
+    setSpin(spinWheel)
+  }
+  useEffect(() => {
+    document.addEventListener('scroll', spinListener)
+    return () => document.removeEventListener('scroll', spinListener)
+  }
+    , [spinListener])
+
   return (
     <>
       {pageAbout === "aboutme" ? (
-        <div className="flex flex-col items-center ">
+        <div className="flex flex-col items-center box-border">
           <div >
             <PageTitle title={toLocalTranslation("about_me_title")} />
           </div>
-
           <div className="p-5 bg-darkTransparent w-[20rem] md:w-[60rem] font-bitterThin max-w-2xl text-center ">
+            {pageAbout === "aboutme" &&
+              <div className=" absolute h-14 -translate-x-[3rem] md:-translate-x-[4rem]">
+                <SpinWheel imgUrl="/icons/rodaDentada1.png" spin={spin} />
+              </div>
+            }
             <Paragraph text={toLocalTranslation("about_me_paragraph_1")} />
+            {pageAbout === "aboutme" &&
+              <div className=" absolute h-14 translate-x-[16.7rem] -translate-y-[2.5rem] md:translate-x-[39rem]">
+                <SpinWheel imgUrl="/icons/rodaDentada2.png" spin={spin} />
+              </div>
+            }
             <Paragraph text={toLocalTranslation("about_me_paragraph_2")} />
             <Paragraph text={toLocalTranslation("about_me_paragraph_3")} />
           </div>
 
           <div className="p-5 bg-darkTransparent w-[20rem] md:w-[60rem] font-bitterThinItalic max-w-2xl text-center">
+            {pageAbout === "aboutme" &&
+              <div className=" absolute h-14 -translate-x-[2rem] -translate-y-[2.5rem] md:-translate-x-[4rem]">
+                <SpinWheel imgUrl="/icons/rodaDentada3.png" spin={spin} />
+              </div>
+            }
             <SubtitleCards
               subtitle={toLocalTranslation("from_the_autor_title")}
             />
@@ -45,7 +73,6 @@ export function DarkContainer({ pageAbout }: PageProps) {
             <Paragraph
               text={toLocalTranslation("from_the_autor_paragraph_2")}
             />
-
             <div className="text-white font-cinzel text-xs text-center md:text-base relative w-full block after:block after:content-[''] after:absolute after:h-[1px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center ">
 
               <div className="flex justify-center w-full p-5">
