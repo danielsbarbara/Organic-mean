@@ -11,7 +11,6 @@ export function ContactPage() {
     return (
         <div className="flex justify-center">
          <DarkContainer pageAbout="contacts"/>
-
      
         </div>
     )

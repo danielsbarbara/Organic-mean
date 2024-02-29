@@ -13,22 +13,29 @@ interface product {
 
 
 interface IImageCardsProps {
-    productName: string | undefined;
-    productNameEng: string | undefined;
-    category: string | undefined;
-    collection: string | undefined;
-    descriptionPt: string | undefined;
-    descriptionEng: string | undefined;
-    imgUrl: string | undefined;
-}
+    info: {
+      productName: string | undefined;
+      productNameEng: string | undefined;
+      category: string | undefined;
+      collection: string | undefined;
+      descriptionPt: string | undefined;
+      descriptionEng: string | undefined;
+      imgUrl: string | undefined;
+    } | undefined;
+    isHovered: boolean;
+  }
 
 
 
-export function ImageCards({ info }: product) {
+export function ImageCards({ info, isHovered }: IImageCardsProps)  {
     return (
         <a href={"#"}>
             <div className=" border-t-[2px] border-l-[2px] border-white w-20 h-20 absolute" />
-            <div className="border-solid border-2 shadow-2xl w-32 h-32 translate-x-1.5 translate-y-1.5 md:w-60 md:h-60">
+            <div
+        className={`border-solid border-2 shadow-2xl w-32 h-32 translate-x-1.5 translate-y-1.5 md:w-60 md:h-60 ${
+          isHovered ? "scale-105" : "" 
+        }`}
+      >
                 <img src={info?.imgUrl} alt="Product Image" />
             </div>
             {/* <div className="border-solid border-2 shadow-2xl w-32 h-32 translate-x-1.5 translate-y-1.5 md:w-60 md:h-60 hidden group-hover:block">
