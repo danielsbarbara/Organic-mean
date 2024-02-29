@@ -1,43 +1,92 @@
-import 'tailwindcss/tailwind.css';
+import React, { useState, useEffect } from "react";
 
-export function showPreloader(): void {
-    
-    // Criando o elemento do preloader
-    const preloader = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    preloader.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-    preloader.setAttribute('viewBox', '0 0 200 200');
-    preloader.classList.add('fixed', 'top-0', 'left-0', 'w-screen', 'h-screen', 'flex', 'items-center', 'justify-center', 'bg-white', 'z-50');
-
-    // Adicionando os caminhos do preloader
-    preloader.innerHTML = `
-        <path fill="none" d="M0 0h200v200H0z"></path>
-        <path fill="none" stroke-linecap="round" stroke="#FF4B0D" stroke-width="13" transform-origin="center" d="M70 95.5V112m0-84v16.5m0 0a25.5 25.5 0 1 0 0 51 25.5 25.5 0 0 0 0-51Zm36.4 4.5L92 57.3M33.6 91 48 82.7m0-25.5L33.6 49m58.5 33.8 14.3 8.2">
-            <animateTransform type="rotate" attributeName="transform" calcMode="spline" dur="2" values="0;-120" keyTimes="0;1" keySplines="0 0 1 1" repeatCount="indefinite"></animateTransform>
-        </path>
-        <path fill="none" stroke-linecap="round" stroke="#FF4B0D" stroke-width="13" transform-origin="center" d="M130 155.5V172m0-84v16.5m0 0a25.5 25.5 0 1 0 0 51 25.5 25.5 0 0 0 0-51Zm36.4 4.5-14.3 8.3M93.6 151l14.3-8.3m0-25.4L93.6 109m58.5 33.8 14.3 8.2">
-            <animateTransform type="rotate" attributeName="transform" calcMode="spline" dur="2" values="0;120" keyTimes="0;1" keySplines="0 0 1 1" repeatCount="indefinite"></animateTransform>
-        </path>
-    `;
-
-    // Adicionando o preloader ao corpo do documento
-    document.body.appendChild(preloader);
+interface PreloaderProps {
+  visible: boolean;
 }
 
-// Função para esconder o preloader
-function hidePreloader(): void {
-    const preloader = document.querySelector('#preloader');
-    if (preloader) {
-        preloader.remove();
-    }
-}
+const Preloader: React.FC<PreloaderProps> = ({ visible }) => {
+  const [loading, setLoading] = useState(true);
 
-// Evento que é acionado quando a página é completamente carregada
-document.onreadystatechange = () => {
-    if (document.readyState === 'complete') {
-        // Esconde o preloader quando a página estiver completamente carregada
-        hidePreloader();
+  useEffect(() => {
+    if (visible) {
+      const timer = setTimeout(() => {
+        setLoading(false);
+      }, 3000); // Tempo simulado de carregamento (3 segundos)
+
+      // Limpeza para evitar vazamentos de memória
+      return () => clearTimeout(timer);
     }
+  }, [visible]);
+
+  if (!visible) return null; // Não renderizar o preloader se visible for false
+
+  return (
+    <div className="h-auto fixed inset-0 top-60 md:top-52 items-center flex justify-center bg-transparent z-50">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 200 200"
+        className="animate-spin h-16 w-16 text-gray-500"
+      >
+        <path
+          fill="#e26c25"
+          stroke="#e26c25"
+          strokeWidth="8"
+          transform-origin="center"
+          d="m148 84.7 13.8-8-10-17.3-13.8 8a50 50 0 0 0-27.4-15.9v-16h-20v16A50 50 0 0 0 63 67.4l-13.8-8-10 17.3 13.8 8a50 50 0 0 0 0 31.7l-13.8 8 10 17.3 13.8-8a50 50 0 0 0 27.5 15.9v16h20v-16a50 50 0 0 0 27.4-15.9l13.8 8 10-17.3-13.8-8a50 50 0 0 0 0-31.7Zm-47.5 50.8a35 35 0 1 1 0-70 35 35 0 0 1 0 70Z"
+          style={{ transform: "scale(1.0)" }}
+        />
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
+        width="150px"
+        height="150px"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="xMidYMid"
+        className=""
+      >
+        <g transform="translate(50 50)">
+          {" "}
+          <g transform="translate(-19 -19) scale(0.6)">
+            {" "}
+            <g>
+              <animateTransform
+                attributeName="transform"
+                type="rotate"
+                values="0;45"
+                keyTimes="0;1"
+                dur="0.8333333333333334s"
+                begin="0s"
+                repeatCount="indefinite"
+              ></animateTransform>
+              <path
+                d="M30.775639009962486 22.290357635723915 L39.26092038420106 30.775639009962482 L30.775639009962482 39.26092038420105 L22.290357635723915 30.775639009962482 A38 38 0 0 1 6.000000000000006 37.52332607858744 L6.000000000000006 37.52332607858744 L6.000000000000007 49.52332607858744 L-6.000000000000001 49.52332607858744 L-6.000000000000002 37.52332607858744 A38 38 0 0 1 -22.290357635723904 30.775639009962486 L-22.290357635723904 30.775639009962486 L-30.775639009962475 39.26092038420106 L-39.26092038420106 30.775639009962486 L-30.775639009962486 22.290357635723915 A38 38 0 0 1 -37.52332607858744 6.000000000000009 L-37.52332607858744 6.000000000000009 L-49.52332607858744 6.000000000000011 L-49.52332607858744 -5.999999999999998 L-37.52332607858744 -6 A38 38 0 0 1 -30.77563900996249 -22.290357635723904 L-30.77563900996249 -22.290357635723904 L-39.26092038420106 -30.77563900996247 L-30.775639009962486 -39.26092038420105 L-22.290357635723915 -30.775639009962482 A38 38 0 0 1 -6.0000000000000115 -37.52332607858744 L-6.0000000000000115 -37.52332607858744 L-6.000000000000014 -49.52332607858744 L5.999999999999995 -49.52332607858744 L5.999999999999997 -37.52332607858744 A38 38 0 0 1 22.290357635723904 -30.77563900996249 L22.290357635723904 -30.77563900996249 L30.77563900996247 -39.26092038420106 L39.26092038420105 -30.77563900996249 L30.775639009962482 -22.290357635723918 A38 38 0 0 1 37.52332607858743 -6.000000000000013 L37.52332607858743 -6.000000000000013 L49.52332607858743 -6.000000000000016 L49.52332607858744 5.999999999999993 L37.52332607858744 5.999999999999996 A38 38 0 0 1 30.77563900996249 22.2903576357239 M0 -23A23 23 0 1 0 0 23 A23 23 0 1 0 0 -23"
+                fill="#1C1C1C"
+              ></path>
+            </g>
+          </g>{" "}
+          <g transform="translate(19 19) scale(0.6)">
+            {" "}
+            <g>
+              <animateTransform
+                attributeName="transform"
+                type="rotate"
+                values="45;0"
+                keyTimes="0;1"
+                dur="0.8333333333333334s"
+                begin="-0.4166666666666667s"
+                repeatCount="indefinite"
+              ></animateTransform>
+              <path
+                d="M-30.77563900996249 -22.290357635723904 L-39.26092038420106 -30.77563900996247 L-30.775639009962486 -39.26092038420105 L-22.290357635723915 -30.775639009962482 A38 38 0 0 1 -6.0000000000000115 -37.52332607858744 L-6.0000000000000115 -37.52332607858744 L-6.000000000000014 -49.52332607858744 L5.999999999999995 -49.52332607858744 L5.999999999999997 -37.52332607858744 A38 38 0 0 1 22.290357635723904 -30.77563900996249 L22.290357635723904 -30.77563900996249 L30.77563900996247 -39.26092038420106 L39.26092038420105 -30.77563900996249 L30.775639009962482 -22.290357635723918 A38 38 0 0 1 37.52332607858743 -6.000000000000013 L37.52332607858743 -6.000000000000013 L49.52332607858743 -6.000000000000016 L49.52332607858744 5.999999999999993 L37.52332607858744 5.999999999999996 A38 38 0 0 1 30.77563900996249 22.2903576357239 L30.77563900996249 22.2903576357239 L39.26092038420106 30.775639009962468 L30.77563900996249 39.26092038420105 L22.290357635723918 30.775639009962482 A38 38 0 0 1 6.000000000000015 37.52332607858743 L6.000000000000015 37.52332607858743 L6.000000000000024 49.52332607858743 L-5.99999999999995 49.52332607858744 L-5.999999999999959 37.52332607858744 A38 38 0 0 1 -22.2903576357239 30.775639009962497 L-22.2903576357239 30.775639009962497 L-30.77563900996246 39.26092038420108 L-39.260920384201 30.77563900996256 L-30.77563900996244 22.29035763572398 A38 38 0 0 1 -37.52332607858744 5.999999999999985 L-37.52332607858744 5.999999999999985 L-49.52332607858744 5.999999999999989 L-49.523326078587445 -5.999999999999953 L-37.523326078587445 -5.999999999999957 A38 38 0 0 1 -30.775639009962457 -22.29035763572395 M0 -23A23 23 0 1 0 0 23 A23 23 0 1 0 0 -23"
+                fill="#e26c25"
+              ></path>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
+  );
 };
 
-// Exibindo o preloader quando a página é carregada
-showPreloader();
+export default Preloader;
