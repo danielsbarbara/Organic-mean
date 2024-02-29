@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Preloader from "./PreLoader";
+
 const images = [
+  "./Carousel-images/image1.jpg",
+  "./Carousel-images/image4.jpg",
+  "./Carousel-images/image3.jpg",
   "./Carousel-images/image1.jpg",
   "./Carousel-images/image4.jpg",
   "./Carousel-images/image3.jpg",
@@ -19,6 +23,9 @@ export function CarouselHomePage() {
     animate: {
       x: 0,
       opacity: 1,
+      transition: {
+        duration: 0.5, // Ajuste a duração da transição
+      },
     },
     exit: {
       x: direction > 0 ? 200 : -200,
@@ -29,7 +36,7 @@ export function CarouselHomePage() {
   function setNextImage(action: string) {
     if (action === "next") {
       setDirection(-1);
-      setIndex((prev) => (prev === images.length - 1 ? prev : prev + 1));
+      setIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
       return;
     } else {
       setDirection(1);
@@ -39,7 +46,7 @@ export function CarouselHomePage() {
   }
 
   return (
-    <>
+    <div className="relative">
       <div className="flex justify-center w-full h-full">
         <button
           onClick={() => setNextImage("prev")}
@@ -66,6 +73,17 @@ export function CarouselHomePage() {
           <div className="border-t-[2px] border-l-[2px] h-5 w-5 rotate-[135deg]" />
         </button>
       </div>
-    </>
+      <div className="absolute bottom-5 left-0 right-0 flex justify-center mt-4">
+        {images.map((_, i) => (
+          <div
+            key={i}
+            onClick={() => setIndex(i)}
+            className={`w-3 h-3 mx-1 rounded-full cursor-pointer ${
+              index === i ? "bg-black" : "bg-gray-300"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
   );
 }
