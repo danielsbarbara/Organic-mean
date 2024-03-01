@@ -36,14 +36,14 @@ export function ProductsPage() {
   }, [filter]);
 
   return (
-    <div>
-      <Preloader visible={loading} />
-      {!loading && <>
+    <div className="justify-self-start flex flex-col">
       <div className="mb-20">
         <CollectionBar setFilter={setFilter} />
       </div>
-       <HomePageCards info={info} />
-       </>}
+      <Preloader visible={loading} />
+      {!loading && <>
+        <HomePageCards info={info} />
+      </>}
     </div>
   );
 }

@@ -21,7 +21,7 @@ const Preloader: React.FC<PreloaderProps> = ({ visible }) => {
   if (!visible) return null; // Não renderizar o preloader se visible for false
 
   return (
-    <div className="h-auto fixed inset-0 top-60 md:top-52 items-center flex justify-center bg-transparent z-50">
+    <div className="h-auto inset-0  md:top-52 items-center flex justify-center bg-transparent z-50">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 200 200"
