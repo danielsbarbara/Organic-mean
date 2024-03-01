@@ -60,18 +60,18 @@ export function CardPopup({ productPopup, setProductPopup }: productInfo) {
     setProductPopup(null);
   };
 
-// Verifica se productPopup não é nulo antes de renderizar o conteúdo do componente
+  // Verifica se productPopup não é nulo antes de renderizar o conteúdo do componente
 
 
   if (!productPopup) {
     return null; // Retorna null se productPopup for nulo
   }
 
- 
+
 
   return (
     <>
-      
+
       <div
         className="
         flex 
@@ -92,11 +92,11 @@ export function CardPopup({ productPopup, setProductPopup }: productInfo) {
         z-50
         "
       >
-        
+
         <div className="w-auto h-auto flex-wrap flex-col">
-        <div className="z-10 absolute top-0 right-0 p-2">
-        <CloseButton onClick={handleClosePopup}/>
-      </div>
+          <div className="z-10 absolute top-0 right-0 p-2">
+            <CloseButton onClick={handleClosePopup} />
+          </div>
           {/* div das engrenagens titulo e o icon da class */}
           <div className="h-28 flex items-center self-start justify-center">
             <ClockImage link="/images/ClockImage.svg" />
@@ -111,13 +111,13 @@ export function CardPopup({ productPopup, setProductPopup }: productInfo) {
           </div>
 
 
-  
+
           {/* Div da imagem principal e das imagens pequenas */}
           <div className="flex flex-col items-center gap-3 p-2 md:mt-4">
             <div className="w-64 shadow-lg shadow-black md:w-[60%] md:h-[18rem]">
               <ImageCardPopup Url={productPopup.imgUrl} />
             </div>
-            <div className="mt-1 w-full md:w-[28%]">
+            <div className="mt-1 w-full md:w-[30%]">
               <ImageCardPopupSmall
                 smallImg={productPopup.smallImgs}
                 imageSellection={imageSellection}
