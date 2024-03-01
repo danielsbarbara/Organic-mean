@@ -37,11 +37,13 @@ export function ProductsPage() {
 
   return (
     <div>
+      <Preloader visible={loading} />
+      {!loading && <>
       <div className="mb-20">
         <CollectionBar setFilter={setFilter} />
       </div>
-      <Preloader visible={loading} />
-      {!loading && <HomePageCards info={info} />}
+       <HomePageCards info={info} />
+       </>}
     </div>
   );
 }
