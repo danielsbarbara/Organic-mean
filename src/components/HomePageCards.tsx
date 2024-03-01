@@ -74,7 +74,7 @@ export function HomePageCards({ info }: product) {
       </div>
         {showPopup && (
       <div className="fixed z-50 -translate-y-[15rem] md:-translate-y-[11rem] animate-opacityA">
-          <CardPopup productPopup={productPopup} setProductPopup={setProductPopup}/>
+          <CardPopup productPopup={productPopup} setProductPopup={setProductPopup} setShowPopup={setShowPopup}/>
       </div>
         )}
         <ScrollBar target={mainRef}/>
