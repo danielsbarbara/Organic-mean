@@ -7,8 +7,10 @@ export function Root() {
         <>
             {/* all the other elements */}
             <div id="detail" className="bg-rustBackGround bg-no-repeat bg-cover overflow-h-hidden max-w-[100vw] min-h-screen flex flex-col justify-between">
-                <NavBar />
-                <Outlet />
+                <div>
+                    <NavBar />
+                    <Outlet />
+                </div>
                 <Footer />
             </div>
         </>
