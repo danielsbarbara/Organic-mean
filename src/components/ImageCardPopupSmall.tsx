@@ -24,12 +24,12 @@ export function ImageCardPopupSmall({ smallImg, imageSellection }: imageType) {
               key={Math.random()}
               className="border-t-[1px] border-l-[1px] border-white w-4 h-4 absolute -translate-x-1 -translate-y-1 md:h-7 md:w-7 animate-opacityA "
             ></div>
-            <div className="h-16 md:h-32">
+            <div className="h-16 md:w-14">
               <img src={el} />
             </div>
             <div
               key={Math.random()}
-              className="border-b-[1px] border-r-[1px] border-white w-4 h-4 absolute translate-x-[3.2rem] -translate-y-3 md:translate-x-[2.9rem] md:-translate-y-[5.1rem] md:w-7 md:h-7 animate-opacityA"
+              className="border-b-[1px] border-r-[1px] border-white w-4 h-4 absolute translate-x-[3.2rem] -translate-y-3 md:translate-x-[2rem] md:-translate-y-[2rem] md:w-7 md:h-7 animate-opacityA"
             ></div>
           </div>
         </>
