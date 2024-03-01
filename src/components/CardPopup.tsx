@@ -13,6 +13,7 @@ import CloseButton from "./CloseButton";
 interface productInfo {
   productPopup: productType;
   setProductPopup: Function;
+  setShowPopup: Function
 }
 
 interface setType {
@@ -30,7 +31,7 @@ interface productType {
   smallImgs: Array<string>;
 }
 
-export function CardPopup({ productPopup, setProductPopup }: productInfo) {
+export function CardPopup({ productPopup, setProductPopup, setShowPopup }: productInfo) {
 
 
   const collectionIcons: Record<string, string> = {
@@ -58,6 +59,7 @@ export function CardPopup({ productPopup, setProductPopup }: productInfo) {
 
   const handleClosePopup = () => {
     setProductPopup(null);
+    setShowPopup(false)
   };
 
   // Verifica se productPopup não é nulo antes de renderizar o conteúdo do componente
