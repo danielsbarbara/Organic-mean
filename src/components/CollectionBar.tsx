@@ -43,12 +43,13 @@ export const CollectionBar = ({ setFilter }: PropFilter) => {
     <div className="relative bg-black/80 flex flex-col w-full">
       <div className="flex justify-between font-cinzel items-center md:justify-start md:gap-6">
         <div>
-          <CollectionItem
-            setFilter={setFilter}
-            description=""
-            iconPath="./icons/FilterLogo.svg"
-            onClick={() => setShowFilterOptions(!showFilterOptions)}
-          />
+        <CollectionItem
+  setFilter={setFilter}
+  description=""
+  iconPath={showFilterOptions ? "./icons/CloseLogo.svg" : "./icons/FilterLogo.svg"}
+  onClick={() => setShowFilterOptions(!showFilterOptions)}
+/>
+
         </div>
         {CollectionItemArray.map((el: any, i) => (
           <div key={i}>{el}</div>
