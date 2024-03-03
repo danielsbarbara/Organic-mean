@@ -12,7 +12,7 @@ export function ImageCardPopupSmall({ smallImg, imageSellection }: imageType) {
   ];
 
   return (
-    <div className="flex gap-4 w-full justify-center cursor-pointer ">
+    <div className="flex gap-4 w-full justify-center cursor-pointer -translate-y-[1rem]">
       {smallImg.map((el, i) => (
         <>
           <div
@@ -22,14 +22,14 @@ export function ImageCardPopupSmall({ smallImg, imageSellection }: imageType) {
           >
             <div
               key={Math.random()}
-              className="border-t-[1px] border-l-[1px] border-white w-4 h-4 absolute -translate-x-1 -translate-y-1 md:h-7 md:w-7 animate-opacityA "
+              className="border-t-[1px] border-l-[1px] border-white w-4 h-4 -translate-x-1 translate-y-3 md:translate-y-6 md:h-7 md:w-7 animate-opacityA "
             ></div>
             <div className="h-16 md:w-14">
               <img src={el} />
             </div>
             <div
               key={Math.random()}
-              className="border-b-[1px] border-r-[1px] border-white w-4 h-4 absolute translate-x-[3.2rem] -translate-y-3 md:translate-x-[2rem] md:-translate-y-[2rem] md:w-7 md:h-7 animate-opacityA"
+              className="border-b-[1px] border-r-[1px] border-white w-4 h-4 translate-x-[3.2rem] -translate-y-3 md:translate-x-[2rem] md:-translate-y-[2rem] md:w-7 md:h-7 animate-opacityA"
             ></div>
           </div>
         </>

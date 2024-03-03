@@ -1,11 +1,11 @@
-interface ClockImageType{
+interface ClockImageType {
     link: string
 }
 
-export function ClockImage({link}: ClockImageType){
-    return(
+export function ClockImage({ link}: ClockImageType) {
+    return (
         <>
-            <img src={link} className="absolute w-96"/> 
+            <img src={link} className="w-96" />
         </>
     )
 }
