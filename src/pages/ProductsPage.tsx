@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { CollectionBar } from "../components/CollectionBar";
 import { HomePageCards } from "../components/HomePageCards";
 import Preloader from "../components/PreLoader";
+import { LoadingPhrases } from "../components/LoadingPhrases";
 
 export function ProductsPage() {
   const [info, setInfo] = useState();
