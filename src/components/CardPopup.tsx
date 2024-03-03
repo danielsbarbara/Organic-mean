@@ -58,6 +58,7 @@ export function CardPopup({ productPopup, setProductPopup, setShowPopup }: produ
   // para nao ser undefined
 
   const handleClosePopup = () => {
+    //event.preventDefault()
     setProductPopup(null);
     setShowPopup(false)
   };
@@ -89,8 +90,10 @@ export function CardPopup({ productPopup, setProductPopup, setShowPopup }: produ
         shadow-black 
         rounded-lg
         md:w-[600px]
-        md:h-auto
-        md:-translate-y-20
+        md:h-[600px]
+        md:-translate-y-30
+        md:overflow-y-scroll 
+        md:no-scrollbar
         z-50
         "
       >
@@ -100,15 +103,17 @@ export function CardPopup({ productPopup, setProductPopup, setShowPopup }: produ
             <CloseButton onClick={handleClosePopup} />
           </div>
           {/* div das engrenagens titulo e o icon da class */}
-          <div className="h-28 flex items-center self-start justify-center">
+          <div className="h-28 flex flex-col items-center self-start justify-center">
+            <div className="translate-y-[6.3rem] md:translate-y-[7.4rem]">
+              <CardPopUpText
+                description={
+                  getUserLanguage() === "pt"
+                    ? productPopup.productName
+                    : productPopup.productNameEng
+                }
+              />
+            </div>
             <ClockImage link="/images/ClockImage.svg" />
-            <CardPopUpText
-              description={
-                getUserLanguage() === "pt"
-                  ? productPopup.productName
-                  : productPopup.productNameEng
-              }
-            />
             <ClassIconPopUp link={collectionIcon} />
           </div>
 
@@ -156,7 +161,7 @@ export function CardPopup({ productPopup, setProductPopup, setShowPopup }: produ
             <div className="flex flex-col items-center"></div>
           </div>
         </div>
-        <div className="md:h-[30rem] h-[16rem] w-5 self-center">
+        <div className="-translate-y-[5rem] md:-translate-y-0 right-0 md:h-[30rem] h-[16rem] w-5 self-center fixed md:right-1">
           <ScrollLine />
         </div>
       </div>

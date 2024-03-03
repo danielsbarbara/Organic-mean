@@ -1,9 +1,8 @@
-export function ScrollLine(){
+export function ScrollLine() {
     return (
-        <div className="h-full w-[0.1rem] bg-white">
-        </div>
+        <div className="h-[90%] w-[0.1rem] bg-white"/>
     )
 }
 
 
-{/* <img src="/icons/ScrollLine.svg" className="h-96 w-3"/> */}
+{/* <img src="/icons/ScrollLine.svg" className="h-96 w-3"/> */ }
