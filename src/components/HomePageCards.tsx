@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { ImageCards } from "./ImageCards";
 import { CardPopup } from "./CardPopup";
 import { ScrollBar } from "./Scroll";
+import { LoadingPhrases } from "./LoadingPhrases";
 
 interface hoverType {
   hover: boolean;

@@ -122,5 +122,18 @@
   "popup_card_product_description": {
     "pt": "Descrição",
     "en": "Description"
+  },
+  "loading_phrases": {
+    "pt": [
+      "Cada joia conta uma história única, um reflexo da beleza que encontramos em cada momento precioso da vida.",
+      "Assim como diamantes são lapidados para brilhar, nós também enfrentamos desafios para revelar nossa verdadeira luz interior.",
+      "Cada pérola nasce da superação, transformando adversidades em algo precioso e belo.",
+      "Como um fio de ouro entrelaçando a vida, as joias simbolizam a conexão eterna entre momentos especiais."
+    ],
+    "en": [
+      "Every piece of jewelry tells a unique story, a reflection of the beauty we find in every precious moment of life.",
+      "Just as diamonds are cut to shine, we too face challenges to reveal our true inner light.",
+      "Every pearl is born from overcoming, turning adversities into something precious and beautiful.",
+      "Like a thread of gold weaving through life, jewelry symbolizes the timeless connection between special moments."]
   }
 }
