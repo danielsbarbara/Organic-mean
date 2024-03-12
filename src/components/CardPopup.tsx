@@ -9,11 +9,14 @@ import { CardPopUpText } from "./CardPopUpText";
 import getUserLanguage from "../i18n/getLanguage";
 import { toLocalTranslation } from "../i18n/toLocalTranslation";
 import CloseButton from "./CloseButton";
+import { InfoContainerPopUp } from "./InfoContainerPopUp";
+import { ScrollBar } from "./Scroll";
+import { useRef } from "react";
 
 interface productInfo {
   productPopup: productType;
   setProductPopup: Function;
-  setShowPopup: Function
+  setShowPopup: Function;
 }
 
 interface setType {
@@ -31,9 +34,13 @@ interface productType {
   smallImgs: Array<string>;
 }
 
-export function CardPopup({ productPopup, setProductPopup, setShowPopup }: productInfo) {
+export function CardPopup({
+  productPopup,
+  setProductPopup,
+  setShowPopup,
+}: productInfo) {
 
-
+  
   const collectionIcons: Record<string, string> = {
     Nature: "/icons/NatureCardLogo.svg",
     Oceanic: "/icons/OceanicCardLogo.svg",
@@ -60,21 +67,19 @@ export function CardPopup({ productPopup, setProductPopup, setShowPopup }: produ
   const handleClosePopup = () => {
     //event.preventDefault()
     setProductPopup(null);
-    setShowPopup(false)
+    setShowPopup(false);
   };
 
   // Verifica se productPopup não é nulo antes de renderizar o conteúdo do componente
-
 
   if (!productPopup) {
     return null; // Retorna null se productPopup for nulo
   }
 
-
+  
 
   return (
     <>
-
       <div
         className="
         flex 
@@ -89,16 +94,16 @@ export function CardPopup({ productPopup, setProductPopup, setShowPopup }: produ
         shadow-lg 
         shadow-black 
         rounded-lg
-        md:w-[600px]
+        md:w-[565px]
         md:h-[600px]
         md:-translate-y-30
         md:overflow-y-scroll 
         md:no-scrollbar
         z-50
         "
-      >
 
-        <div className="w-auto h-auto flex-wrap flex-col">
+      >
+        <div className="w-auto h-auto flex-wrap flex-col ">
           <div className="z-10 absolute top-0 right-0 p-2">
             <CloseButton onClick={handleClosePopup} />
           </div>
@@ -116,8 +121,6 @@ export function CardPopup({ productPopup, setProductPopup, setShowPopup }: produ
             <ClockImage link="/images/ClockImage.svg" />
             <ClassIconPopUp link={collectionIcon} />
           </div>
-
-
 
           {/* Div da imagem principal e das imagens pequenas */}
           <div className="flex flex-col items-center gap-3 p-2 md:mt-4">
@@ -157,10 +160,14 @@ export function CardPopup({ productPopup, setProductPopup, setShowPopup }: produ
                     : productPopup.descriptionEng
                 }
               />
-            </div>
+            </div>{" "}
+            <div className="flex justify-center items-center gap-3 md:flex-row">
+        <InfoContainerPopUp />
+      </div>
             <div className="flex flex-col items-center"></div>
           </div>
         </div>
+
         <div className="-translate-y-[5rem] md:-translate-y-0 right-0 md:h-[30rem] h-[16rem] w-5 self-center fixed md:right-1">
           <ScrollLine />
         </div>
