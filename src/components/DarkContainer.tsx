@@ -40,7 +40,7 @@ export function DarkContainer({ pageAbout }: PageProps) {
       {pageAbout === "aboutme" ? (
         <div className="flex flex-col items-center box-border">
           <div >
-            <PageTitle title={toLocalTranslation("about_me_title")} />
+            <PageTitle title={toLocalTranslation(" ")} />
           </div>
           <div className="p-5 bg-darkTransparent w-[20rem] md:w-[60rem] font-bitterThin max-w-2xl text-center ">
             {pageAbout === "aboutme" &&
