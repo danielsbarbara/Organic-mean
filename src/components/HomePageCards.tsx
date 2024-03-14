@@ -54,7 +54,7 @@ export function HomePageCards({ info }: product) {
   };
 
   return (
-    <div className="flex justify-center" ref={mainRef}>
+    <div className="flex justify-center ml-5 mr-5" ref={mainRef}>
       <div className="p-2 flex justify-center flex-wrap gap-6 mb-20"
         onClick={() => showPopup && setShowPopup(false)}>
         {info?.map((el, i) => (

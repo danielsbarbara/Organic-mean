@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         'rustBackGround': "url(../public/images/background2.jpg)",
+        'chain': "url(../public/images/chainTest.png)"
       }, colors: {
         'card_popup_gray': '#83644C',
         'darkTransparent': 'rgba(0, 0, 0, 0.72)',
