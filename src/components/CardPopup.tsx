@@ -40,7 +40,7 @@ export function CardPopup({
   setShowPopup,
 }: productInfo) {
 
-  
+
   const collectionIcons: Record<string, string> = {
     Nature: "/icons/NatureCardLogo.svg",
     Oceanic: "/icons/OceanicCardLogo.svg",
@@ -76,7 +76,7 @@ export function CardPopup({
     return null; // Retorna null se productPopup for nulo
   }
 
-  
+
 
   return (
     <>
@@ -162,8 +162,8 @@ export function CardPopup({
               />
             </div>{" "}
             <div className="flex justify-center items-center gap-3 md:flex-row">
-        <InfoContainerPopUp />
-      </div>
+              <InfoContainerPopUp />
+            </div>
             <div className="flex flex-col items-center"></div>
           </div>
         </div>

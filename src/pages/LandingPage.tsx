@@ -10,7 +10,6 @@ export function LandingPage() {
                 <PageTitle title="Organic Mean" />
             </div>
             <CarouselHomePage />
-            
         </div>
     )
 }
