@@ -24,7 +24,7 @@ export function DropFilter({ setFilter }: DownFilter) {
   }
 
   return (
-    <div className="animate-opacityA z-10 border-t-2 border-neutral-600 border-b-2 items-center bg-zinc-900 bg-opacity-60 w-full p-1.5 flex md:gap-4">
+    <div className="animate-opacityA z-10 border-neutral-800 border-b-2 items-center bg-zinc-900 bg-opacity-60 w-full p-1.5 flex md:gap-4">
       <div className="flex border-t-2 border-neutral-500 border-b-2">
         <DropFilterText description={toLocalTranslation("drop_filter_title")} />
       </div>
