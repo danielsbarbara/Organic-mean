@@ -28,7 +28,7 @@ export function Footer() {
       <div className="flex flex-col justify-center items-center opacity-50">
         <Logo />
         <div className="flex flex-col items-center mt-4 hover:scale-110 transition-transform duration-150 ease-in-out">
-          <Link to={"/faqpage"} >
+          <Link to={"/FAQPage"} >
           <FooterItem title="FAQ" />
           </Link>
       </div>
