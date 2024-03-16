@@ -37,14 +37,14 @@ export function Footer() {
       <div className="p-1 flex flex-col items-center mt-2 md:mt-5 ">
         <FooterMenu title={toLocalTranslation("footer_title_2")} />
         <div className="flex flex-wrap md:flex-nowrap w-16 md:w-32 mt-2 gap-2 ">
-          <a href="https://www.whatsapp.com/">
+        <a href="https://wa.me/message/WGHLPXOG7GHKN1">
             <img
               className="w-7 h-8 md:w-[40px] md:h-[40px] hover:scale-125 transition-transform duration-150 ease-in-out"
               src="./icons/WhatsAppLogo.svg"
               alt="WhatsApp"
             />
           </a>
-          <a href="https://www.gmail.com/">
+          <a href="mailto:organic.mean@gmail.com">
             <img
               className=" w-7 h-8 md:w-[50px] md:h-[40px] hover:scale-125 transition-transform duration-150 ease-in-out"
               src="./icons/EmailLogo.svg"
@@ -58,7 +58,7 @@ export function Footer() {
               alt="Instagram"
             />
           </a>
-          <a href="https://www.etsy.com/">
+          <a href="https://organicmean.etsy.com">
             <img
               className="w-6 h-8 md:w-[65px] md:h-[40px] hover:scale-125 transition-transform duration-150 ease-in-out"
               src="./icons/EtsyLogo.svg"
