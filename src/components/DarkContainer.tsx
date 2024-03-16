@@ -23,47 +23,46 @@ interface PageProps {
 }
 
 export function DarkContainer({ pageAbout }: PageProps) {
-  const [spin, setSpin] = useState<number>(0)
+  const [spin, setSpin] = useState<number>(0);
 
   function spinListener() {
-    const spinWheel = window.scrollY
-    setSpin(spinWheel)
+    const spinWheel = window.scrollY;
+    setSpin(spinWheel);
   }
   useEffect(() => {
-    document.addEventListener('scroll', spinListener)
-    return () => document.removeEventListener('scroll', spinListener)
-  }
-    , [spinListener])
+    document.addEventListener("scroll", spinListener);
+    return () => document.removeEventListener("scroll", spinListener);
+  }, [spinListener]);
 
   return (
     <>
       {pageAbout === "aboutme" ? (
         <div className="flex flex-col items-center box-border">
-          <div >
+          <div>
             <PageTitle title={toLocalTranslation(" ")} />
           </div>
           <div className="p-5 bg-darkTransparent w-[20rem] md:w-[60rem] font-bitterThin max-w-2xl text-center ">
-            {pageAbout === "aboutme" &&
+            {pageAbout === "aboutme" && (
               <div className=" absolute h-14 -translate-x-[3rem] md:-translate-x-[4rem]">
                 <SpinWheel imgUrl="/icons/rodaDentada1.png" spin={spin} />
               </div>
-            }
+            )}
             <Paragraph text={toLocalTranslation("about_me_paragraph_1")} />
-            {pageAbout === "aboutme" &&
+            {pageAbout === "aboutme" && (
               <div className=" absolute h-14 translate-x-[16.7rem] -translate-y-[2.5rem] md:translate-x-[39rem]">
                 <SpinWheel imgUrl="/icons/rodaDentada2.png" spin={spin} />
               </div>
-            }
+            )}
             <Paragraph text={toLocalTranslation("about_me_paragraph_2")} />
             <Paragraph text={toLocalTranslation("about_me_paragraph_3")} />
           </div>
 
           <div className="p-5 bg-darkTransparent w-[20rem] md:w-[60rem] font-bitterThinItalic max-w-2xl text-center">
-            {pageAbout === "aboutme" &&
+            {pageAbout === "aboutme" && (
               <div className=" absolute h-14 -translate-x-[2rem] -translate-y-[2.5rem] md:-translate-x-[4rem]">
                 <SpinWheel imgUrl="/icons/rodaDentada3.png" spin={spin} />
               </div>
-            }
+            )}
             <SubtitleCards
               subtitle={toLocalTranslation("from_the_autor_title")}
             />
@@ -74,7 +73,6 @@ export function DarkContainer({ pageAbout }: PageProps) {
               text={toLocalTranslation("from_the_autor_paragraph_2")}
             />
             <div className="text-white font-cinzel text-xs text-center md:text-base relative w-full block after:block after:content-[''] after:absolute after:h-[1px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center ">
-
               <div className="flex justify-center w-full p-5">
                 <Link to={"/products"}>
                   <Paragraph text={toLocalTranslation("about_me_link")} />
@@ -86,9 +84,9 @@ export function DarkContainer({ pageAbout }: PageProps) {
       ) : (
         <div className="flex flex-col items-center">
           <div>
-            <PageTitle title={toLocalTranslation("contact_page_title")} />
+            <PageTitle title={toLocalTranslation(" ")} />
           </div>
-          <div className="p-5 mb-4 bg-darkTransparent w-full md:flex md:flex-row-reverse">
+          <div className="p-8 mb-4 bg-darkTransparent w-full md:flex md:flex-row-reverse">
             <div className="w-60 m-auto mt-5 mb-5">
               <img src="/icons/ContactBookLogo.svg" />
             </div>
@@ -97,11 +95,27 @@ export function DarkContainer({ pageAbout }: PageProps) {
               <Paragraph text="organicmean@gmail.com" />
               <Paragraph text="(+351) 935-658-854" />
             </div>
-            <div className="flex justify-between p-1 md:flex-col md:p-3">
+            <div className="flex justify-between p-1 md:flex-col md:p-3 ">
               <SocialMediaIcon link="/icons/InstagramLogo.svg" />
-              <SocialMediaIcon link="/icons/EmailLogo.svg" />
-              <SocialMediaIcon link="/icons/WhatsAppLogo.svg" />
-              <SocialMediaIcon link="/icons/EtsyLogo.svg" />
+              <a href="mailto:organic.mean@gmail.com" className="hover:scale-110">
+                <SocialMediaIcon link="/icons/EmailLogo.svg" />
+              </a>
+              <a href="https://wa.me/message/WGHLPXOG7GHKN1" className="hover:scale-110">
+                <SocialMediaIcon link="/icons/WhatsAppLogo.svg" />
+              </a>
+              <a href="https://organicmean.etsy.com" className="hover:scale-110">
+                <SocialMediaIcon link="/icons/EtsyLogo.svg" />
+              </a>
+            </div>
+          </div>
+          <div className="font-cinzel font-bold text-xs text-center md:text-lg relative w-full block after:block after:content-[''] after:absolute after:h-[1px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center ">
+            <div className="flex justify-center w-full p-5">
+              <Link to={"/products"}>
+                <Paragraph
+                  color="black"
+                  text={toLocalTranslation("about_me_link")}
+                />
+              </Link>
             </div>
           </div>
         </div>
