@@ -19,10 +19,18 @@ export function ProductsPage() {
         body: JSON.stringify(filter),
       };
 
+      // const res = await fetch(
+      //   "https://organic-mean.onrender.com/api/v1/products",
+      //   option
+      // );
       const res = await fetch(
-        "https://organic-mean.onrender.com/api/v1/products",
+        "https://back-office-virid.vercel.app/api/v1/site",
         option
       );
+      // const res = await fetch(
+      //   "http://localhost:3000/api/v1/site",
+      //   option
+      // );
 
       if (res.status === 200) {
         const body = await res.json();
