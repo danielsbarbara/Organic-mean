@@ -24,7 +24,7 @@ export function ProductsPage() {
       //   option
       // );
       const res = await fetch(
-        "https://back-office-virid.vercel.app/api/v1/site",
+        "https://webhopper-organicmean.vercel.app/api/v1/site",
         option
       );
       // const res = await fetch(
