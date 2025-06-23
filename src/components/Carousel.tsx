@@ -3,12 +3,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import Preloader from "./PreLoader";
 
 const images = [
-  "./Carousel-images/image1.jpg",
-  "./Carousel-images/image4.jpg",
   "./Carousel-images/image3.jpg",
   "./Carousel-images/image1.jpg",
-  "./Carousel-images/image4.jpg",
-  "./Carousel-images/image3.jpg",
+
 ];
 
 export function CarouselHomePage() {
