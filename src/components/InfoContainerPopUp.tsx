@@ -17,7 +17,7 @@ export function InfoContainerPopUp() {
               alt="Email"
             />
           </a>
-          <a href="https://www.instagram.com/">
+          <a href="https://www.instagram.com/_organic._.mean_/">
             <img
               className="w-7 h-8 md:w-[40px] md:h-[40px]"
               src="./icons/InstagramLogo.svg"
