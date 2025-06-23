@@ -96,14 +96,28 @@ export function DarkContainer({ pageAbout }: PageProps) {
               <Paragraph text="(+351) 935-658-854" />
             </div>
             <div className="flex justify-between p-1 md:flex-col md:p-3 ">
-              <SocialMediaIcon link="/icons/InstagramLogo.svg" />
-              <a href="mailto:organic.mean@gmail.com" className="hover:scale-110">
+              <a
+                href="https://www.instagram.com/_organic._.mean_/"
+                className="hover:scale-110"
+              >
+                <SocialMediaIcon link="/icons/InstagramLogo.svg" />
+              </a>
+              <a
+                href="mailto:organic.mean@gmail.com"
+                className="hover:scale-110"
+              >
                 <SocialMediaIcon link="/icons/EmailLogo.svg" />
               </a>
-              <a href="https://wa.me/message/WGHLPXOG7GHKN1" className="hover:scale-110">
+              <a
+                href="https://wa.me/message/WGHLPXOG7GHKN1"
+                className="hover:scale-110"
+              >
                 <SocialMediaIcon link="/icons/WhatsAppLogo.svg" />
               </a>
-              <a href="https://organicmean.etsy.com" className="hover:scale-110">
+              <a
+                href="https://organicmean.etsy.com"
+                className="hover:scale-110"
+              >
                 <SocialMediaIcon link="/icons/EtsyLogo.svg" />
               </a>
             </div>
