@@ -29,7 +29,7 @@ export function ScrollBar({ target }: ScrollType) {
             <div className='absolute right-1 md:right-2 top-[172px] md:top-[182px] flex flex-col items-center'>
                 <div className={`w-[20px] md:w-[30px] bg-chain bg-contain bg-repeat-y bg-center`} style={{ height: `${scroll < 108 ? 108 : scroll}px` }} />
                 <div className="-translate-y-3 -translate-x-[1px]">
-                    <img src="../icons/rodaDentada1.png" className="h-6 md:h-10" style={{ rotate: `${scroll}deg` }} />
+                    <img src="../icons/test3.png" className="h-6 md:h-10" style={{ rotate: `${scroll}deg` }} />
                 </div>
                 {/* <div className="border-l-[2px] border-b-[2px] border-white h-4 w-4 -rotate-45 -translate-y-3 opacity-45" /> */}
                 {/* <div className="border-l-[2px] border-b-[2px] border-white h-4 w-4 -rotate-45 -translate-y-5 opacity-60" /> */}
